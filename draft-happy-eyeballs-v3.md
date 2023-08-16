@@ -299,7 +299,7 @@ If client applications or users wish to connect to IPv4 address
 literals, the Happy Eyeballs engine will need to perform NAT64
 address synthesis for them. The solution is similar to "Bump-in-the-
 Host" {{!RFC6535}} but is implemented inside the Happy Eyeballs library.
-   
+
 When an IPv4 address is passed into the library instead of a
 hostname, the device queries the network for the NAT64 prefix using
 "Discovery of the IPv6 Prefix Used for IPv6 Address Synthesis"
