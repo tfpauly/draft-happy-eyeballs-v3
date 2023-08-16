@@ -19,12 +19,12 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "Happy Eyeballs Version 3: Better Connectivity Using Concurrency"
+abbrev: "Happy Eyeballs v3"
 category: info
 
-docname: draft-todo-yourname-protocol-latest
-submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
+docname: draft-happy-eyeballs-v3-latest
+submissiontype: IETF
 number:
 date:
 consensus: true
