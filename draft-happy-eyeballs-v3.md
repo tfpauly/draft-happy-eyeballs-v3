@@ -129,8 +129,8 @@ offer an asynchronous DNS API, this behavior can be simulated by
 making separate synchronous queries on different threads, one per
 query.
 
-The algorithm for acting upon received answers depends on if the
-client send out queries for SVCB RRs.
+The algorithm for acting upon received answers depends on whether the
+client sent out queries for SVCB RRs.
 
 If the client did not request SVCB RRs:
 
@@ -158,7 +158,7 @@ If the client did request SVCB RRs:
   proceeds with the process of sorting addresses and staggered
   connection attempts.
 
-For both variations of the algorithm, the recommended value for
+For both variations of the algorithm, the RECOMMENDED value for
 the Resolution Delay is 50 milliseconds.
 
 If new answers arrive while connection attempts are in progress,
