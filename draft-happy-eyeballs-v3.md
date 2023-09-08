@@ -108,37 +108,64 @@ AAAA and A DNS queries. Both queries SHOULD be made as soon after
 one another as possible, with the AAAA query made first and
 immediately followed by the A query.
 
-Implementations SHOULD NOT wait for both families of answers to
+Additionally, if the client also wants to receive SVCB / HTTPS
+resource records (RRs) {{!SVCB=I-D.ietf-dnsop-svcb-https}}, it
+SHOULD issue the SVCB query immediately before the AAAA and A
+queries (prioritizing the SVCB query since it can also include
+address hints). If the client has only one of IPv4 or IPv6
+connectivity, it still issues the SVCB query in prior to
+whichever AAAA or A query is appropriate. Note that upon
+receiving an SVCB answer, the client might need to issue futher
+AAAA and/or A queries to resolve the service name included in
+the RR.
+
+Implementations SHOULD NOT wait for all answers to
 return before attempting connection establishment. If one query
 fails to return or takes significantly longer to return, waiting for
-the second address family can significantly delay the connection
+the other answers can significantly delay the connection
 establishment of the first one. Therefore, the client SHOULD treat
 DNS resolution as asynchronous. Note that if the platform does not
 offer an asynchronous DNS API, this behavior can be simulated by
-making two separate synchronous queries on different threads, one per
-address family.
+making separate synchronous queries on different threads, one per
+query.
 
-The algorithm proceeds as follows: if a positive AAAA response (a
-response with at least one valid AAAA record) is received first, the
-first IPv6 connection attempt is immediately started. If a positive
-A response is received first due to reordering, the client SHOULD
-wait a short time for the AAAA response to ensure that preference is
-given to IPv6 (it is common for the AAAA response to follow the A
-response by a few milliseconds). This delay will be referred to as
-the "Resolution Delay". The recommended value for the Resolution
-Delay is 50 milliseconds. If a positive AAAA response is received
-within the Resolution Delay period, the client immediately starts the
-IPv6 connection attempt. If a negative AAAA response (no error, no
-data) is received within the Resolution Delay period or the AAAA
-response has not been received by the end of the Resolution Delay
-period, the client SHOULD proceed to sorting addresses (see
-{{sorting}}) and staggered connection attempts (see {{connections}}) using
-any IPv4 addresses returned so far. If the AAAA response arrives
-while these connection attempts are in progress but before any
-connection has been established, then the newly received IPv6
-addresses are incorporated into the list of available candidate
+The algorithm for acting upon received answers depends on if the
+client send out queries for SVCB RRs.
+
+If the client did not request SVCB RRs:
+
+- If a positive AAAA response (a response containing at least one
+  valid AAAA RR) is received first, the first IPv6 connection
+  attempt is immediately started.
+- If a positive A response is received first (which might be due
+  to reordering), the client SHOULD wait a short time for the
+  AAAA response to ensure that preference is given to IPv6, since
+  it is common for the AAAA response to follow the A response by
+  a few milliseconds. This delay is referred to as
+  the "Resolution Delay". If a negative AAAA response (no error, no
+  data) is received within the Resolution Delay period or the AAAA
+  response has not been received by the end of the Resolution Delay
+  period, the client SHOULD proceed to sorting addresses (see
+  {{sorting}}) and staggered connection attempts (see {{connections}}) using
+  any IPv4 addresses received so far.
+
+If the client did request SVCB RRs:
+
+- If the client receives any positive response back (containing a valid
+  AAAA, A, or SVCB RR), it starts the Resolution Delay timer, which
+  it lets run until both the AAAA and SVCB responses are received.
+  Once both records are received, or the timer expires, the client
+  proceeds with the process of sorting addresses and staggered
+  connection attempts.
+
+For both variations of the algorithm, the recommended value for
+the Resolution Delay is 50 milliseconds.
+
+If new answers arrive while connection attempts are in progress,
+but before any connection has been established, then the newly
+received addresses are incorporated into the list of available candidate
 addresses (see {{changes}}) and the process of connection attempts will
-continue with the IPv6 addresses added, until one connection is
+continue with the new addresses added, until one connection is
 established.
 
 ## Handling Multiple DNS Server Addresses
