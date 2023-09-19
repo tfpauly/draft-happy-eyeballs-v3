@@ -78,7 +78,7 @@ As compared to {{HEV2}}, this document adds support for incorporating
 the SVCB and HTTPS resource records (RRs) {{!SVCB=I-D.ietf-dnsop-svcb-https}}.
 These records can be queried along with A and AAAA records, and
 the updated algorithm defines how to handle SVCB responses to
-improve address and protocol selection. 
+improve address and protocol selection.
 
 # Conventions and Definitions
 
