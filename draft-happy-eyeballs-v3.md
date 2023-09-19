@@ -74,6 +74,12 @@ client, how to create an ordered list of destination addresses to
 which to attempt connections, and how to race the connection
 attempts.
 
+As compared to {{HEV2}}, this document adds support for incorporating
+the SVCB and HTTPS resource records (RRs) {{!SVCB=I-D.ietf-dnsop-svcb-https}}.
+These records can be queried along with A and AAAA records, and
+the updated algorithm defines how to handle SVCB responses to
+improve address and protocol selection. 
+
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
@@ -109,7 +115,7 @@ one another as possible, with the AAAA query made first and
 immediately followed by the A query.
 
 Additionally, if the client also wants to receive SVCB / HTTPS
-resource records (RRs) {{!SVCB=I-D.ietf-dnsop-svcb-https}}, it
+resource records (RRs) {{SVCB}}, it
 SHOULD issue the SVCB query immediately before the AAAA and A
 queries (prioritizing the SVCB query since it can also include
 address hints). If the client has only one of IPv4 or IPv6
@@ -204,7 +210,11 @@ as this allows the client to get the racing effect of Happy Eyeballs
 for the entire list, not just the first IPv4 and first IPv6
 addresses.
 
-First, the client MUST sort the addresses received up to this point
+First, the client sorts addresses based on service priority
+if the set of addresses contains any answers from SVCB records.
+See {{priority}} for details.
+
+Next, the client MUST sort the addresses received up to this point
 using Destination Address Selection ({{!RFC6724, Section 6}}).
 
 If the client is stateful and has a history of expected round-trip
@@ -237,6 +247,47 @@ Note that the address selection described in this section only
 applies to destination addresses; Source Address Selection
 ({{!RFC6724, Section 5}} is performed once per destination address and
 is out of scope of this document.
+
+## Sorting Based on Priority {#priority}
+
+SVCB {{SVCB}} RRs indicate a priority for each ServiceMode
+response. This priority applies to any IPv4 or IPv6 address hints
+in the RR itself, as well as any addresses received based on
+A or AAAA queries for the name in the ServiceMode RR. The priority
+in an SVCB RR is always greater than 0.
+
+Priority sorting SHOULD be performed as the first step of sorting
+if any of the answers were from SVCB RRs. Any answers from SVCB
+RRs are sorted first, with the SVCB answers with the lowest numerical
+value (such as 1) being sorted first, and answers with higher numerical
+values being sorted later. All answers that were not associated with
+an SVCB record SHOULD be sorted last.
+
+Note that an SVCB RR with the TargetName "." applies to the owner
+name in the RR, and thus the priority of that SVCB RR applies to
+any A or AAAA RRs for the same owner name. These answers are thus
+sorted according to that SVCB RR's priority.
+
+If the client support TLS Encrypted Client Hello (ECH) discovery through
+SVCB records {{!SVCB-ECH=I-D.sbn-tls-svcb-ech}}, then it additionally
+needs to add strict processing to ensure that it cannot be forced to
+fall back to non-ECH connections. Specifically, if the client receives
+SVCB RRs, and all of the RRs indicate support for ECH, it MUST NOT
+use any A or AAAA that do not correspond to an SVCB record. This
+is defined as being in the "SVCB-Reliant" mode of connection establishment.
+
+## Sorting Based on Protocol Support
+
+SVCB records can additionally communicate support for protocols
+with the "alpn" parameter, as well as support for TLS
+Encrypted Client Hello with the "ech" parameter.
+
+Clients MAY sort answers to prefer services that support
+specific protocols. For example, a client can choose to prefer
+services that support ALPN values that support QUIC.
+
+Such sorting SHOULD occur at the start of the sorting phase,
+along with priority-based sorting.
 
 # Connection Attempts {#connections}
 
@@ -337,6 +388,9 @@ inserted into the list of addresses as if they were results from DNS
 queries; connection attempts follow the algorithm described above
 (see {{connections}}).
 
+Such translation also applies to any IPv4 address hints received
+in SVCB RRs.
+
 ## Hostnames with Broken AAAA Records {#broken}
 
 At the time of writing, there exist a small but non-negligible number
@@ -400,7 +454,7 @@ provided by the application ({{literals}}).
 The values that may be configured as defaults on a client for use in
 Happy Eyeballs are as follows:
 
-- Resolution Delay ({{query}}): The time to wait for a AAAA response
+- Resolution Delay ({{query}}): The time to wait for AAAA and SVCB responses
 after receiving an A response. Recommended to be 50 milliseconds.
 
 - First Address Family Count ({{sorting}}): The number of addresses
