@@ -113,9 +113,9 @@ resource records (RRs) {{!SVCB=I-D.ietf-dnsop-svcb-https}}, it
 SHOULD issue the SVCB query immediately before the AAAA and A
 queries (prioritizing the SVCB query since it can also include
 address hints). If the client has only one of IPv4 or IPv6
-connectivity, it still issues the SVCB query in prior to
+connectivity, it still issues the SVCB query prior to
 whichever AAAA or A query is appropriate. Note that upon
-receiving an SVCB answer, the client might need to issue futher
+receiving a SVCB answer, the client might need to issue futher
 AAAA and/or A queries to resolve the service name included in
 the RR.
 
@@ -126,8 +126,7 @@ the other answers can significantly delay the connection
 establishment of the first one. Therefore, the client SHOULD treat
 DNS resolution as asynchronous. Note that if the platform does not
 offer an asynchronous DNS API, this behavior can be simulated by
-making separate synchronous queries on different threads, one per
-query.
+making separate synchronous queries, each on a different thread.
 
 The algorithm for acting upon received answers depends on whether the
 client sent out queries for SVCB RRs.
@@ -153,7 +152,7 @@ If the client did request SVCB RRs:
 
 - If the client receives any positive response back (containing a valid
   AAAA, A, or SVCB RR), it starts the Resolution Delay timer, which
-  it lets run until both the AAAA and SVCB responses are received.
+  is run until both the AAAA and SVCB responses are received.
   Once both records are received, or the timer expires, the client
   proceeds with the process of sorting addresses and staggered
   connection attempts.
@@ -161,7 +160,7 @@ If the client did request SVCB RRs:
 For both variations of the algorithm, the RECOMMENDED value for
 the Resolution Delay is 50 milliseconds.
 
-If new answers arrive while connection attempts are in progress,
+If new positive responses arrive while connection attempts are in progress,
 but before any connection has been established, then the newly
 received addresses are incorporated into the list of available candidate
 addresses (see {{changes}}) and the process of connection attempts will
