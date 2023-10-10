@@ -152,7 +152,9 @@ If the client did request SVCB RRs:
 
 - If the client receives any positive response back (containing a valid
   AAAA, A, or SVCB RR), it starts the Resolution Delay timer, which
-  is run until both the AAAA and SVCB responses are received.
+  is run until both the AAAA and SVCB responses are received,
+  or a SVCB response is received that also includes at least one
+  address in the `ipv6hint` parameter.
   Once both records are received, or the timer expires, the client
   proceeds with the process of sorting addresses and staggered
   connection attempts.
