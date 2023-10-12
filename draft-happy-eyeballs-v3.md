@@ -131,11 +131,10 @@ one another as possible, with the AAAA query made first and
 immediately followed by the A query.
 
 Additionally, if the client also wants to receive SVCB / HTTPS
-resource records (RRs) {{SVCB}}, it
-SHOULD issue the SVCB query immediately before the AAAA and A
-queries (prioritizing the SVCB query since it can also include
-address hints). If the client has only one of IPv4 or IPv6
-connectivity, it still issues the SVCB query prior to
+resource records (RRs) {{SVCB}}, it SHOULD issue the SVCB query
+immediately before the AAAA and A queries (prioritizing the SVCB query
+since it can also include address hints). If the client has only one
+of IPv4 or IPv6 connectivity, it still issues the SVCB query prior to
 whichever AAAA or A query is appropriate. Note that upon
 receiving a SVCB answer, the client might need to issue futher
 AAAA and/or A queries to resolve the service name included in
