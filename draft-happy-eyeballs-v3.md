@@ -86,12 +86,12 @@ ClientHello {{!ECH=I-D.ietf-tls-esni}} keys, address hints, among
 other relevant hints which may help speed up connection establishment
 and improve user privacy. Discovering protocol support during
 resolution, such as for HTTP/3 over QUIC {{?RFC9114}}, allows
-attempting to use the protocol for the current connection, instead of
-using information from other discovery mechanisms such as HTTP
-Alternative Services {{?AltSvc=RFC7838}} in subsequent connection
-attempts. These records can be queried along with A and AAAA records,
-and the updated algorithm defines how to handle SVCB responses to
-improve address and protocol selection.
+upgrading between protocols on the current connection attempts,
+instead of waiting for subsequent attempts to use information from
+other discovery mechanisms such as HTTP Alternative Services
+{{?AltSvc=RFC7838}}. These records can be queried along with A and
+AAAA records, and the updated algorithm defines how to handle SVCB
+responses to improve address and protocol selection.
 
 #  Conventions and Definitions
 
@@ -114,13 +114,16 @@ distinct phases:
 ({{connections}})
 
 Note that this document assumes that the preference policy for the
-host destination address favors QUIC over TCP, and IPv6 over IPv4.
-QUIC only requires one packet to establish a secure connection, making
-it quicker compared to TCP {{?QUIC=RFC9000}}. Additionally, IPv6 has
-many desirable properties designed to be improvements over IPv4
-{{?IPV6=RFC8200}}. If the host is configured to have a different
-preference, the recommendations in this document can be easily
-adapted.
+host destination address favors IPv6 over IPv4. IPv6 has many
+desirable properties designed to be improvements over IPv4
+{{?IPV6=RFC8200}}.
+
+This document also assumes that the preference policy favors QUIC over
+TCP. QUIC only requires one packet to establish a secure connection,
+making it quicker compared to TCP {{?QUIC=RFC9000}}.
+
+If the host is configured to have different preferences, the
+recommendations in this document can be easily adapted.
 
 # Hostname Resolution Query Handling {#query}
 
