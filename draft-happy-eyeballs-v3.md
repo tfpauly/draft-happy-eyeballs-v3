@@ -49,7 +49,7 @@ that attempt multiple connections in parallel have a chance of
 establishing a connection more quickly. This document specifies
 requirements for algorithms that reduce this user-visible delay and
 provides an example algorithm, referred to as "Happy Eyeballs". This
-document updates the algorithm description in {{?HEV2=RFC8305}}.
+document updates the algorithm description in RFC 8305.
 
 --- middle
 
@@ -85,7 +85,7 @@ endpoints and associated information about protocol support, Encrypted
 ClientHello {{!ECH=I-D.ietf-tls-esni}} keys, address hints, among
 other relevant hints which may help speed up connection establishment
 and improve user privacy. Discovering protocol support during
-resolution, such as for HTTP/3 (QUIC transport) {{?RFC9114}}, allows
+resolution, such as for HTTP/3 over QUIC {{?RFC9114}}, allows
 attempting to use the protocol for the current connection, instead of
 using information from other discovery mechanisms such as HTTP
 Alternative Services {{?AltSvc=RFC7838}} in subsequent connection
