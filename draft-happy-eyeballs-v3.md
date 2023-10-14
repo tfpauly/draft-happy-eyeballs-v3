@@ -28,6 +28,10 @@ author:
     fullname: Tommy Pauly
     organization: Apple
     email: "tpauly@apple.com"
+ -
+    fullname: Nidhi Jaju
+    organization: Google
+    email: "nidhijaju@google.com"
 
 normative:
 
@@ -63,7 +67,7 @@ provides an example algorithm.
 
 This document defines the algorithm for "Happy Eyeballs", a technique
 for reducing user-visible delays on dual-stack hosts. This
-definition updates the original description in {{?HEV2=RFC8305}}, which
+definition updates the description in {{?HEV2=RFC8305}}, which
 itself obsoleted {{?RFC6555}}.
 
 The Happy Eyeballs algorithm of racing connections to resolved
@@ -74,7 +78,22 @@ client, how to create an ordered list of destination addresses to
 which to attempt connections, and how to race the connection
 attempts.
 
-# Conventions and Definitions
+As compared to {{HEV2}}, this document adds support for incorporating
+SVCB / HTTPS resource records (RRs)
+{{!SVCB=I-D.ietf-dnsop-svcb-https}}. SVCB RRs provide alternative
+endpoints and associated information about protocol support, Encrypted
+ClientHello {{!ECH=I-D.ietf-tls-esni}} keys, address hints, among
+other relevant hints which may help speed up connection establishment
+and improve user privacy. Discovering protocol support during
+resolution, such as for HTTP/3 over QUIC {{?RFC9114}}, allows
+upgrading between protocols on the current connection attempts,
+instead of waiting for subsequent attempts to use information from
+other discovery mechanisms such as HTTP Alternative Services
+{{?AltSvc=RFC7838}}. These records can be queried along with A and
+AAAA records, and the updated algorithm defines how to handle SVCB
+responses to improve address and protocol selection.
+
+#  Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
 
@@ -96,8 +115,14 @@ distinct phases:
 
 Note that this document assumes that the preference policy for the
 host destination address favors IPv6 over IPv4. IPv6 has many
-desirable properties designed to be improvements over IPv4 {{?IPV6=RFC8200}}.
-If the host is configured to have a different preference, the
+desirable properties designed to be improvements over IPv4
+{{?IPV6=RFC8200}}.
+
+This document also assumes that the preference policy favors QUIC over
+TCP. QUIC only requires one packet to establish a secure connection,
+making it quicker compared to TCP {{?QUIC=RFC9000}}.
+
+If the host is configured to have different preferences, the
 recommendations in this document can be easily adapted.
 
 # Hostname Resolution Query Handling {#query}
@@ -109,11 +134,10 @@ one another as possible, with the AAAA query made first and
 immediately followed by the A query.
 
 Additionally, if the client also wants to receive SVCB / HTTPS
-resource records (RRs) {{!SVCB=I-D.ietf-dnsop-svcb-https}}, it
-SHOULD issue the SVCB query immediately before the AAAA and A
-queries (prioritizing the SVCB query since it can also include
-address hints). If the client has only one of IPv4 or IPv6
-connectivity, it still issues the SVCB query prior to
+resource records (RRs) {{SVCB}}, it SHOULD issue the SVCB query
+immediately before the AAAA and A queries (prioritizing the SVCB query
+since it can also include address hints). If the client has only one
+of IPv4 or IPv6 connectivity, it still issues the SVCB query prior to
 whichever AAAA or A query is appropriate. Note that upon
 receiving a SVCB answer, the client might need to issue futher
 AAAA and/or A queries to resolve the service name included in
