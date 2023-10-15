@@ -306,6 +306,32 @@ Delay SHOULD have an upper bound, referred to as the "Maximum
 Connection Attempt Delay". The current recommended value is 2
 seconds.
 
+## Establishing connections
+
+Each application can have different semantics for establishing a connection.
+Typically, connection establishment consists of one or more handshakes. This
+document addresses two types of handshakes:
+
+- Transport layer handshake, where peers establish a reliable, in-order data
+  stream.
+- Cryptographic handshake, where peers establish a secure channel for
+  communication.
+
+For example, plain HTTP only requires a transport layer handshake (i.e., TCP
+handshake). HTTP with TLS necessitates a cryptographic handshake (i.e., TLS
+handshake) in addition to the TCP handshake. QUIC version 1 combines both
+cryptographic and transport handshakes into a single handshake.
+
+While transport layer handshakes generally do not have restrictions on attempts
+to establish a connection, some cryptographic handshakes may be dependent on
+ServiceMode SVCB RRs and could impose limitations on establishing a connection.
+For instance, ECH-capable clients may become SVCB-reliant clients
+({{!SVCB=I-D.ietf-dnsop-svcb-https, Section 3}}) when SVCB RRs contain the
+"ech" SvcParamKey. If the client is either an SVCB-reliant client or a
+SVCB-optional client that might switch to SVCB-reliant connection
+establishment during the process, the client MUST wait for SVCB RRs before
+proceeding with the cryptographic handshake.
+
 # DNS Answer Changes During Happy Eyeballs Connection Setup {#changes}
 
 If, during the course of connection establishment, the DNS answers
