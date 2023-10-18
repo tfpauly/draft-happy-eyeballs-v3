@@ -224,13 +224,36 @@ addresses, the client should define the order in which to start the
 attempts. Once the order has been defined, the client can use a
 simple algorithm for racing each option after a short delay (see
 {{connections}}). It is important that the ordered list involve all
-addresses from both families that have been received by this point,
-as this allows the client to get the racing effect of Happy Eyeballs
-for the entire list, not just the first IPv4 and first IPv6
-addresses.
+addresses from both families and all protocols that have been received
+by this point, as this allows the client to get the racing effect of
+Happy Eyeballs for the entire list, not just the first IPv4 and first
+IPv6 addresses.
 
-First, the client MUST sort the addresses received up to this point
-using Destination Address Selection ({{!RFC6724, Section 6}}).
+Note that the following sorting steps are an incremental sort, meaning
+that the client SHOULD sort within each sorted group for each
+incremental step.
+
+If any of the answers were from SVCB RRs, they SHOULD be sorted ahead
+of any answers that were not associated with a SVCB record.
+
+If the client supports TLS Encrypted Client Hello (ECH) discovery through
+SVCB records {{!SVCB-ECH=I-D.sbn-tls-svcb-ech}}, depending on the
+client's preference to handle ECH, the client SHOULD sort addresses with
+ECH keys taking priority to maintain privacy when attempting connection
+establishment.
+
+The client then sorts the addresses received up to this point, within
+each group, by service priority if the set of addresses contain any
+answers from SVCB records. See {{priority}} for details.
+
+The client SHOULD also sort the addresses in protocol order, such that
+QUIC is prioritized over TCP, as it connects faster and generally
+results in a better experience once connected. For example, QUIC
+provides improved delivery and congestion control, supports connection
+migration, and provides other benefits {{QUIC}}.
+
+Then, within each group at equal priority, the client MUST sort the
+addresses using Destination Address Selection ({{!RFC6724, Section 6}}).
 
 If the client is stateful and has a history of expected round-trip
 times (RTTs) for the routes to access each address, it SHOULD add a
@@ -245,23 +268,43 @@ cookies. This historical data MUST NOT be used across different
 network interfaces and SHOULD be flushed whenever a device changes
 the network to which it is attached.
 
-Next, the client SHOULD modify the ordered list to interleave address
-families. Whichever address family is first in the list should be
-followed by an address of the other address family; that is, if the
-first address in the sorted list is IPv6, then the first IPv4 address
-should be moved up in the list to be second in the list. An
-implementation MAY want to favor one address family more by allowing
-multiple addresses of that family to be attempted before trying the
-other family. The number of contiguous addresses of the first
-address family will be referred to as the "First Address Family
-Count" and can be a configurable value. This is performed to avoid
-waiting through a long list of addresses from a given address family
-if connectivity over that address family is impaired.
+Next, the client SHOULD modify the ordered list to interleave
+protocols and address families. Whichever combination of protocol
+and address family is first in the list should be followed by an
+address of the other protocol type and same address family, and then
+an endpoint from the same protocol and other address family. For example,
+if the first address in the sorted list is a QUIC IPv6 address, then
+the first TCP IPv6 address should be moved up in the list to be second
+in the list, and then the first QUIC IPv4 address should be moved up
+in the list to be third in the list. An implementation MAY choose to
+favor one protocol or address family more by allowing multiple
+addresses of that protocol or family to be attempted before trying the
+other combinations. The number of contiguous addresses of the first
+combination of properties will be referred to as the "First Address
+Combination Count" and can be a configurable value. This avoids waiting
+through a long list of addresses from a given address family using a
+given protocol if connectivity over a protocol or an address family is
+impaired.
 
 Note that the address selection described in this section only
 applies to destination addresses; Source Address Selection
-({{!RFC6724, Section 5}} is performed once per destination address and
+({{!RFC6724, Section 5}}) is performed once per destination address and
 is out of scope of this document.
+
+## Sorting Based on Priority {#priority}
+SVCB {{SVCB}} RRs indicate a priority for each ServiceMode response.
+This prioirity applies to any IPv4 or IPv6 address hints in the RR
+itself, as well as any addresses received on A or AAAA queries for the
+name in the Servicemode RR. The priority in a SVCB RR is always
+greater than 0.
+
+SVCB answers with the lowest numerical value (such as 1) are sorted
+first, and answers with higher numerical values are sorted later.
+
+Note that a SVCB RR with the TargetName "." applies to the owner
+name in the RR, and the priority of that SVCB RR applies to
+any A or AAAA RRs for the same owner name. These answers are
+sorted according to that SVCB RR's priority.
 
 # Connection Attempts {#connections}
 
