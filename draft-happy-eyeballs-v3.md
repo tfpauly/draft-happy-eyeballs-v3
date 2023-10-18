@@ -328,9 +328,9 @@ HTTPS RR:
      alpn="h3" no-default-alpn ipv6hint=2001:db8::2 )
 ~~~
 
-In this case, attempting a connection to 2001:db8::2 would not make sense
-because the RR indicates that svc1.example.com would only support the
-UDP-based version of HTTP (HTTP/3).
+In this case, attempting a connection to 2001:db8::2 and any address for
+svc1.example.com would not make sense because the RR indicates that
+svc1.example.com would only support the UDP-based version of HTTP (HTTP/3).
 
 If the client is an HTTP client that supports both Alt-Svc {{?AltSvc=RFC7838}}
 and SVCB (HTTPS) RRs, the client SHOULD ensure that connection attempts are
