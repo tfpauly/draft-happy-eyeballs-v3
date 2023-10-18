@@ -32,6 +32,10 @@ author:
     fullname: Nidhi Jaju
     organization: Google
     email: "nidhijaju@google.com"
+ -
+    fullname: Kenichi Ishibashi
+    organization: Google
+    email: "bashi@google.com"
 
 normative:
 
@@ -348,6 +352,33 @@ in the presence of high packet-loss rates. The Connection Attempt
 Delay SHOULD have an upper bound, referred to as the "Maximum
 Connection Attempt Delay". The current recommended value is 2
 seconds.
+
+## Handling Application Layer Protocol Negotiation (ALPN)
+
+The `alpn` and `no-default-alpn` SvcParamKeys in SVCB RRs indicate the
+"SVCB ALPN set," which specifies the underlying transport protocols supported
+by the associated service endpoint. When the client requests SVCB RRs, it
+SHOULD perform the procedure specified in {{Section 7.1.2 of SVCB}} to determine
+the underlying transport protocols that both the client and the service endpoint
+support. The client SHOULD NOT attempt to make a connection to a service
+endpoint whose SVCB ALPN set does not contain any protocols that the client
+supports. For example, suppose the client is an HTTP client that only supports
+TCP-based versions such as HTTP/1.1 and HTTP/2, and it receives the following
+HTTPS RR:
+
+~~~
+ example.com. 60 IN HTTPS 1 svc1.example.com. (
+     alpn="h3" no-default-alpn ipv6hint=2001:db8::2 )
+~~~
+
+In this case, attempting a connection to 2001:db8::2 or any other address resolved
+for `svc1.example.com` would be incorrect because the RR indicates that
+`svc1.example.com` only supports HTTP/3, based on the ALPN value of "h3".
+
+If the client is an HTTP client that supports both Alt-Svc {{?AltSvc=RFC7838}}
+and SVCB (HTTPS) RRs, the client SHOULD ensure that connection attempts are
+consistent with both the Alt-Svc parameters and the SVCB ALPN set, as specified
+in {{Section 9.3 of SVCB}}.
 
 # DNS Answer Changes During Happy Eyeballs Connection Setup {#changes}
 
