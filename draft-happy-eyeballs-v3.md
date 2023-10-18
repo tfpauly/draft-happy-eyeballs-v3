@@ -315,18 +315,22 @@ seconds.
 The `alpn` and `no-default-alpn` SvcParamKeys in SVCB RRs indicate the
 "SVCB ALPN set," which specifies the underlying transport protocols supported
 by the associated service endpoint. When the client requests SVCB RRs, it
-SHOULD perform the procedure specified in
-{{Section 7.1.2 of SVCB}} to determine the underlying
-transport protocols that both the client and the service endpoint support. The
-client SHOULD NOT attempt to make a connection to a service endpoint whose SVCB
-ALPN set does not contain any protocols that the client supports. For example,
-suppose the client is an HTTP client that only supports TCP-based versions such
-as HTTP/1.1 and HTTP/2, and it receives the following HTTPS RR:
+SHOULD perform the procedure specified in {{Section 7.1.2 of SVCB}} to determine
+the underlying transport protocols that both the client and the service endpoint
+support. The client SHOULD NOT attempt to make a connection to a service
+endpoint whose SVCB ALPN set does not contain any protocols that the client
+supports. For example, suppose the client is an HTTP client that only supports
+TCP-based versions such as HTTP/1.1 and HTTP/2, and it receives the following
+HTTPS RR:
+
 ~~~
- example.com. 60 IN HTTPS 1 . alpn="h3" no-default-alpn ipv6hints=2001:db8::2
+ example.com. 60 IN HTTPS 1 svc1.example.com. (
+     alpn="h3" no-default-alpn ipv6hint=2001:db8::2 )
 ~~~
+
 In this case, attempting a connection to 2001:db8::2 would not make sense
-because example.com only supports the UDP-based version of HTTP (HTTP/3).
+because the RR indicates that svc1.example.com would only support the
+UDP-based version of HTTP (HTTP/3).
 
 If the client is an HTTP client that supports both Alt-Svc {{?AltSvc=RFC7838}}
 and SVCB (HTTPS) RRs, the client SHOULD ensure that connection attempts are
