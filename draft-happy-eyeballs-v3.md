@@ -306,28 +306,28 @@ Delay SHOULD have an upper bound, referred to as the "Maximum
 Connection Attempt Delay". The current recommended value is 2
 seconds.
 
-## Establishing connections
+## Determining successful connection establishment
 
-Each application can have different semantics for establishing a connection.
-Typically, connection establishment consists of one or more handshakes. This
-document addresses two types of handshakes:
+The determination of when a connection attempt has successfully completed
+(and other attempts can be cancelled) depends on the protocols being used
+to establish a connection. This can involve one or more protocol handshakes.
 
-- Transport layer handshake, where peers establish a reliable, in-order data
-  stream.
-- Cryptographic handshake, where peers establish a secure channel for
-  communication.
-
-For example, plain HTTP only requires a transport layer handshake (i.e., TCP
-handshake). HTTP with TLS necessitates a cryptographic handshake (i.e., TLS
-handshake) in addition to the TCP handshake. QUIC version 1 combines both
-cryptographic and transport handshakes into a single handshake.
+Client connections that use TCP only (without TLS or another protocol on top, such
+as for unencrypted HTTP connections) will determine successful establishment based
+on completing the TCP handshake only. When TLS is used on top of of TCP (such
+as for encrypted HTTP connections), clients MAY choose to wait for the TLS handshake to
+successfully complete before cancelling other connection attempts. This is particularly
+useful for networks in which a TCP-terminating proxy might be causing TCP handshakes
+to succeed quickly, even though end-to-end connectivity with the TLS-terminating
+server will fail. QUIC connections inherently include a secure handshake in their main
+handshakes, and thus only need to wait for a single handshake to complete.
 
 While transport layer handshakes generally do not have restrictions on attempts
 to establish a connection, some cryptographic handshakes may be dependent on
 ServiceMode SVCB RRs and could impose limitations on establishing a connection.
 For instance, ECH-capable clients may become SVCB-reliant clients
-({{!SVCB=I-D.ietf-dnsop-svcb-https, Section 3}}) when SVCB RRs contain the
-"ech" SvcParamKey. If the client is either an SVCB-reliant client or a
+({{Section 3 of SVCB}}) when SVCB RRs contain the
+"ech" SvcParamKey {{!ECH=I-D.ietf-tls-svcb-ech}}. If the client is either an SVCB-reliant client or a
 SVCB-optional client that might switch to SVCB-reliant connection
 establishment during the process, the client MUST wait for SVCB RRs before
 proceeding with the cryptographic handshake.
