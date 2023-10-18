@@ -280,8 +280,8 @@ in the list to be third in the list. An implementation MAY choose to
 favor one protocol or address family more by allowing multiple
 addresses of that protocol or family to be attempted before trying the
 other combinations. The number of contiguous addresses of the first
-combination of properties will be referred to as the "First Address
-Combination Count" and can be a configurable value. This avoids waiting
+combination of properties will be referred to as the "Preferred Protocol
+Attempt Count" and can be a configurable value. This avoids waiting
 through a long list of addresses from a given address family using a
 given protocol if connectivity over a protocol or an address family is
 impaired.
@@ -471,11 +471,12 @@ Happy Eyeballs are as follows:
 - Resolution Delay ({{query}}): The time to wait for a AAAA response
 after receiving an A response. Recommended to be 50 milliseconds.
 
-- First Address Family Count ({{sorting}}): The number of addresses
-belonging to the first address family (such as IPv6) that should
-be attempted before attempting another address family.
+- Preferred Protocol Combination Count ({{sorting}}): The number of
+addresses belonging to the preferred address family (such as IPv6) using
+the preferred protocol (such as QUIC) that should be attempted before
+attempting the next combination of address family and protocol.
 Recommended to be 1; 2 may be used to more aggressively favor a
-particular address family.
+particular combination of address family and protocol.
 
 - Connection Attempt Delay ({{connections}}): The time to wait between
 connection attempts in the absence of RTT data. Recommended to be
