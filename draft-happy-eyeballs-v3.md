@@ -353,6 +353,32 @@ Delay SHOULD have an upper bound, referred to as the "Maximum
 Connection Attempt Delay". The current recommended value is 2
 seconds.
 
+## Determining successful connection establishment
+
+The determination of when a connection attempt has successfully completed
+(and other attempts can be cancelled) depends on the protocols being used
+to establish a connection. This can involve one or more protocol handshakes.
+
+Client connections that use TCP only (without TLS or another protocol on top, such
+as for unencrypted HTTP connections) will determine successful establishment based
+on completing the TCP handshake only. When TLS is used on top of of TCP (such
+as for encrypted HTTP connections), clients MAY choose to wait for the TLS handshake to
+successfully complete before cancelling other connection attempts. This is particularly
+useful for networks in which a TCP-terminating proxy might be causing TCP handshakes
+to succeed quickly, even though end-to-end connectivity with the TLS-terminating
+server will fail. QUIC connections inherently include a secure handshake in their main
+handshakes, and thus only need to wait for a single handshake to complete.
+
+While transport layer handshakes generally do not have restrictions on attempts
+to establish a connection, some cryptographic handshakes may be dependent on
+ServiceMode SVCB RRs and could impose limitations on establishing a connection.
+For instance, ECH-capable clients may become SVCB-reliant clients
+({{Section 3 of SVCB}}) when SVCB RRs contain the
+"ech" SvcParamKey {{!ECH=I-D.ietf-tls-svcb-ech}}. If the client is either an SVCB-reliant client or a
+SVCB-optional client that might switch to SVCB-reliant connection
+establishment during the process, the client MUST wait for SVCB RRs before
+proceeding with the cryptographic handshake.
+
 ## Handling Application Layer Protocol Negotiation (ALPN)
 
 The `alpn` and `no-default-alpn` SvcParamKeys in SVCB RRs indicate the
