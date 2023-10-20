@@ -319,9 +319,9 @@ made simultaneously. Instead, one connection attempt to a single
 address is started first, followed by the others in the list, one at
 a time. Starting a new connection attempt does not affect previous
 attempts, as multiple connection attempts may occur in parallel.
-Once one of the connection attempts succeeds (generally when the TCP
-handshake completes), all other connections attempts that have not
-yet succeeded SHOULD be canceled. Any address that was not yet
+Once one of the connection attempts succeeds (see
+{{successful-connection}}), all other connections attempts that have
+not yet succeeded SHOULD be canceled. Any address that was not yet
 attempted as a connection SHOULD be ignored. At that time, the
 asynchronous DNS query MAY be canceled as new addresses will not be
 used for this connection. However, the DNS client resolver SHOULD
@@ -332,15 +332,15 @@ can be used for subsequent connections.
 A simple implementation can have a fixed delay for how long to wait
 before starting the next connection attempt. This delay is referred
 to as the "Connection Attempt Delay". One recommended value for a
-default delay is 250 milliseconds. A more nuanced implementation's
-delay should correspond to the time when the previous attempt is
-sending its second TCP SYN, based on the TCP's retransmission timer
-{{!RFC6298}}. If the client has historical RTT data gathered from other
-connections to the same host or prefix, it can use this information
-to influence its delay. Note that this algorithm should only try to
-approximate the time of the first SYN retransmission, and not any
-further retransmissions that may be influenced by exponential timer
-back off.
+default delay is 250 milliseconds. When attempting a TCP connection,
+a more nuanced implementation's delay should correspond to the time
+when the previous attempt is sending its second TCP SYN, based on the
+TCP's retransmission timer {{!RFC6298}}. If the client has historical
+RTT data gathered from other connections to the same host or prefix,
+it can use this information to influence its delay. Note that this
+algorithm should only try to approximate the time of the first SYN
+retransmission, and not any further retransmissions that may be
+influenced by exponential timer back off.
 
 The Connection Attempt Delay MUST have a lower bound, especially if
 it is computed using historical data. More specifically, a
@@ -353,7 +353,7 @@ Delay SHOULD have an upper bound, referred to as the "Maximum
 Connection Attempt Delay". The current recommended value is 2
 seconds.
 
-## Determining successful connection establishment
+## Determining successful connection establishment {#successful-connection}
 
 The determination of when a connection attempt has successfully completed
 (and other attempts can be cancelled) depends on the protocols being used
