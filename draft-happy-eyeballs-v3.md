@@ -267,10 +267,10 @@ addresses it used in the past, it SHOULD add another Destination
 Address Selection rule between the RTT rule and rule 9, which prefers
 used addresses over unused ones. This helps servers that use the
 client's IP address during authentication, as is the case for TCP
-Fast Open {{?RFC7413}} and some Hypertext Transport Protocol (HTTP)
-cookies. This historical data MUST NOT be used across different
-network interfaces and SHOULD be flushed whenever a device changes
-the network to which it is attached.
+Fast Open {{?RFC7413}}, QUIC 0-RTT establishment {{?QUIC}}, and some
+Hypertext Transport Protocol (HTTP) cookies. This historical data MUST
+NOT be used across different network interfaces and SHOULD be flushed
+whenever a device changes the network to which it is attached.
 
 Next, the client SHOULD modify the ordered list to interleave
 protocols and address families. Whichever combination of protocol
@@ -319,28 +319,27 @@ made simultaneously. Instead, one connection attempt to a single
 address is started first, followed by the others in the list, one at
 a time. Starting a new connection attempt does not affect previous
 attempts, as multiple connection attempts may occur in parallel.
-Once one of the connection attempts succeeds (generally when the TCP
-handshake completes), all other connections attempts that have not
-yet succeeded SHOULD be canceled. Any address that was not yet
-attempted as a connection SHOULD be ignored. At that time, the
-asynchronous DNS query MAY be canceled as new addresses will not be
-used for this connection. However, the DNS client resolver SHOULD
-still process DNS replies from the network for a short period of time
-(recommended to be 1 second), as they will populate the DNS cache and
-can be used for subsequent connections.
+Once one of the connection attempts succeeds ({{success}}), all other
+connections attempts that have not yet succeeded SHOULD be canceled.
+Any address that was not yet attempted as a connection SHOULD be ignored.
+At that time, the asynchronous DNS query MAY be canceled as new addresses
+will not be used for this connection. However, the DNS client resolver
+SHOULD still process DNS replies from the network for a short period of
+time (recommended to be 1 second), as they will populate the DNS cache
+and can be used for subsequent connections.
 
 A simple implementation can have a fixed delay for how long to wait
 before starting the next connection attempt. This delay is referred
 to as the "Connection Attempt Delay". One recommended value for a
 default delay is 250 milliseconds. A more nuanced implementation's
 delay should correspond to the time when the previous attempt is
-sending its second TCP SYN, based on the TCP's retransmission timer
-{{!RFC6298}}. If the client has historical RTT data gathered from other
-connections to the same host or prefix, it can use this information
-to influence its delay. Note that this algorithm should only try to
-approximate the time of the first SYN retransmission, and not any
-further retransmissions that may be influenced by exponential timer
-back off.
+sending its initial packet, based on the retransmission timer
+({{!RFC6298}}, {{?RFC9002}}). If the client has historical RTT data
+gathered from other connections to the same host or prefix, it can use
+this information to influence its delay. Note that this algorithm should
+only try to approximate the time of the first SYN retransmission, and
+not any further retransmissions that may be influenced by exponential
+timer back off.
 
 The Connection Attempt Delay MUST have a lower bound, especially if
 it is computed using historical data. More specifically, a
@@ -353,7 +352,7 @@ Delay SHOULD have an upper bound, referred to as the "Maximum
 Connection Attempt Delay". The current recommended value is 2
 seconds.
 
-## Determining successful connection establishment
+## Determining successful connection establishment {#success}
 
 The determination of when a connection attempt has successfully completed
 (and other attempts can be cancelled) depends on the protocols being used
@@ -563,17 +562,20 @@ software is updated.
 
 # Limitations
 
-Happy Eyeballs will handle initial connection failures at the TCP/IP
-layer; however, other failures or performance issues may still affect
-the chosen connection.
+Happy Eyeballs will handle initial connection failures at the TCP and
+QUIC layers; however, other failures or performance issues may still
+affect the chosen connection.
 
 ## Path Maximum Transmission Unit Discovery
 
-Since Happy Eyeballs is only active during the initial handshake and
-TCP does not pass the initial handshake, issues related to MTU can be
-masked and go unnoticed during Happy Eyeballs. Solving this issue is
-out of scope of this document. One solution is to use "Packetization
-Layer Path MTU Discovery" {{!RFC4821}}.
+For TCP connections, since Happy Eyeballs is only active during the
+initial handshake and TCP does not pass the initial handshake, issues
+related to MTU can be masked and go unnoticed during Happy Eyeballs.
+For QUIC connections, a minimum MTU of at least 1200 bytes
+{{!RFC9000, Section 8.1-5}} is guaranteed, but there is a chance that
+larger values may not be available. Solving this issue is out of scope
+of this document. One solution is to use "Packetization Layer Path MTU
+Discovery" {{!RFC4821}}.
 
 ## Application Layer
 
