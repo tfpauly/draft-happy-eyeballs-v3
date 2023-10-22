@@ -267,10 +267,10 @@ addresses it used in the past, it SHOULD add another Destination
 Address Selection rule between the RTT rule and rule 9, which prefers
 used addresses over unused ones. This helps servers that use the
 client's IP address during authentication, as is the case for TCP
-Fast Open {{?RFC7413}}, QUIC 0-RTT establishment {{?QUIC}}, and some
-Hypertext Transport Protocol (HTTP) cookies. This historical data MUST
-NOT be used across different network interfaces and SHOULD be flushed
-whenever a device changes the network to which it is attached.
+Fast Open {{?RFC7413}} and some Hypertext Transport Protocol (HTTP)
+cookies. This historical data MUST NOT be used across different
+network interfaces and SHOULD be flushed whenever a device changes
+the network to which it is attached.
 
 Next, the client SHOULD modify the ordered list to interleave
 protocols and address families. Whichever combination of protocol
@@ -333,10 +333,11 @@ before starting the next connection attempt. This delay is referred
 to as the "Connection Attempt Delay". One recommended value for a
 default delay is 250 milliseconds. A more nuanced implementation's
 delay should correspond to the time when the previous attempt is
-sending its initial packet, based on the retransmission timer
-({{!RFC6298}}, {{?RFC9002}}). If the client has historical RTT data
-gathered from other connections to the same host or prefix, it can use
-this information to influence its delay. Note that this algorithm should
+retrying its handshake (such as sending a second TCP SYN or a second
+QUIC Initial), based on the retransmission timer ({{!RFC6298}},
+{{?RFC9002}}). If the client has historical RTT data gathered from
+other connections to the same host or prefix, it can use this
+information to influence its delay. Note that this algorithm should
 only try to approximate the time of the first SYN retransmission, and
 not any further retransmissions that may be influenced by exponential
 timer back off.
@@ -562,9 +563,9 @@ software is updated.
 
 # Limitations
 
-Happy Eyeballs will handle initial connection failures at the TCP and
-QUIC layers; however, other failures or performance issues may still
-affect the chosen connection.
+Happy Eyeballs will handle initial connection failures at the transport
+layer (such as TCP or QUIC); however, other failures or performance
+issues may still affect the chosen connection.
 
 ## Path Maximum Transmission Unit Discovery
 
