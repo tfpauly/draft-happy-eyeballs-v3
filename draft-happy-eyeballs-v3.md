@@ -462,6 +462,9 @@ inserted into the list of addresses as if they were results from DNS
 queries; connection attempts follow the algorithm described above
 (see {{connections}}).
 
+Such translation also applies to any IPv4 address hints received
+in SVCB RRs.
+
 ## Hostnames with Broken AAAA Records {#broken}
 
 At the time of writing, there exist a small but non-negligible number
