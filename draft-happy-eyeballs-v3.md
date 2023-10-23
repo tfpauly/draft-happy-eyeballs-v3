@@ -338,7 +338,7 @@ QUIC Initial), based on the retransmission timer ({{!RFC6298}},
 {{?RFC9002}}). If the client has historical RTT data gathered from
 other connections to the same host or prefix, it can use this
 information to influence its delay. Note that this algorithm should
-only try to approximate the time of the first SYN retransmission, and
+only try to approximate the time of the first handshake packet retransmission, and
 not any further retransmissions that may be influenced by exponential
 timer back off.
 
