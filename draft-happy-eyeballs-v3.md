@@ -29,12 +29,16 @@ author:
     organization: Apple
     email: "tpauly@apple.com"
  -
+    fullname: David Schinazi
+    org: Google LLC
+    email: "dschinazi.ietf@gmail.com"
+ -
     fullname: Nidhi Jaju
-    organization: Google
+    org: Google LLC
     email: "nidhijaju@google.com"
  -
     fullname: Kenichi Ishibashi
-    organization: Google
+    organization: Google LLC
     email: "bashi@google.com"
 
 normative:
