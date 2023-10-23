@@ -12,9 +12,13 @@ v: 3
 # area: AREA
 # workgroup: WG Working Group
 keyword:
- - next generation
- - unicorn
- - sparkling distributed ledger
+ - ipv6
+ - ipv4
+ - racing
+ - tcp
+ - quic
+ - svcb
+ - ech
 venue:
 #  group: WG
 #  type: Working Group
@@ -26,7 +30,7 @@ venue:
 author:
  -
     fullname: Tommy Pauly
-    organization: Apple
+    organization: Apple Inc
     email: "tpauly@apple.com"
  -
     fullname: David Schinazi
