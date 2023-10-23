@@ -3,7 +3,7 @@ title: "Happy Eyeballs Version 3: Better Connectivity Using Concurrency"
 abbrev: "Happy Eyeballs v3"
 category: info
 
-docname: draft-happy-eyeballs-v3-latest
+docname: draft-pauly-v6ops-happy-eyeballs-v3-latest
 submissiontype: IETF
 number:
 date:
@@ -21,7 +21,7 @@ venue:
 #  mail: WG@example.com
 #  arch: https://example.com/WG
   github: "tfpauly/draft-happy-eyeballs-v3"
-  latest: "https://tfpauly.github.io/draft-happy-eyeballs-v3/draft-happy-eyeballs-v3.html"
+  latest: "https://tfpauly.github.io/draft-happy-eyeballs-v3/draft-pauly-v6ops-happy-eyeballs-v3.html"
 
 author:
  -
