@@ -463,7 +463,8 @@ Host" {{!RFC6535}} but is implemented inside the Happy Eyeballs library.
 When an IPv4 address is passed into the library instead of a
 hostname, the device queries the network for the NAT64 prefix using
 "Discovery of the IPv6 Prefix Used for IPv6 Address Synthesis"
-{{!RFC7050}} and then synthesizes an appropriate IPv6 address (or
+{{!RFC7050}}, or by receiving a PREF64 Router Advertisement from the network {{!RFC8781}}. 
+It then synthesizes an appropriate IPv6 address (or
 several) using the encoding described in "IPv6 Addressing of IPv4/
 IPv6 Translators" {{!RFC6052}}. The synthesized addresses are then
 inserted into the list of addresses as if they were results from DNS
