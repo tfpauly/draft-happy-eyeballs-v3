@@ -305,10 +305,10 @@ is out of scope of this document.
 
 ## Sorting Based on Priority {#priority}
 SVCB {{SVCB}} RRs indicate a priority for each ServiceMode response.
-This prioirity applies to any IPv4 or IPv6 address hints in the RR
+This priority applies to any IPv4 or IPv6 address hints in the RR
 itself, as well as any addresses received on A or AAAA queries for the
-name in the Servicemode RR. The priority in a SVCB RR is always
-greater than 0.
+name in the ServiceMode RR. The priority in a ServiceMode SVCB RR is
+always greater than 0.
 
 SVCB answers with the lowest numerical value (such as 1) are sorted
 first, and answers with higher numerical values are sorted later.
