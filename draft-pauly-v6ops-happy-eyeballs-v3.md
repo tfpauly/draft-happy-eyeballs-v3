@@ -460,6 +460,11 @@ literals, the Happy Eyeballs engine will need to perform NAT64
 address synthesis for them. The solution is similar to "Bump-in-the-
 Host" {{!RFC6535}} but is implemented inside the Happy Eyeballs library.
 
+Note that IPv4 addresses in 127.0.0.0/8 are often directly routable
+and do not require NAT64 address synthesis. Also, IPv4 addresses in
+the {{!RFC1918}} space can be routed incorrectly if the NAT64 gateway
+does not have routes for that address space.
+
 When an IPv4 address is passed into the library instead of a
 hostname, the device queries the network for the NAT64 prefix using
 "Discovery of the IPv6 Prefix Used for IPv6 Address Synthesis"
