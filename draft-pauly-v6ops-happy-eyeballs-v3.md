@@ -473,6 +473,11 @@ queries; connection attempts follow the algorithm described above
 Such translation also applies to any IPv4 address hints received
 in SVCB RRs.
 
+Note: IPv4 addresses in the 127.0.0.0/8 range are generally directly
+reachable and do not require NAT64 address synthesis. 
+Likewise, IPv4 addresses in the {{!RFC1918}} space may be routed unintendedly when
+doing NAT64 address synthesis depending on the network configuration of the NAT64 gateway.
+
 ## Hostnames with Broken AAAA Records {#broken}
 
 At the time of writing, there exist a small but non-negligible number
