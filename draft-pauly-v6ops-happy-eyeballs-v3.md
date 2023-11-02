@@ -191,9 +191,9 @@ If the client did request SVCB RRs:
   is run until both the AAAA and SVCB ServiceMode responses are received,
   or a SVCB response is received that also includes at least one
   address in the `ipv6hint` parameter.
-  Once both records are received, or the timer expires, the client
-  proceeds with the process of sorting addresses and staggered
-  connection attempts.
+  Once a SVCB response and at least one IPv6 address have been received,
+  or the timer expires, the client proceeds with the process of sorting
+  addresses and staggered connection attempts.
 
 For both variations of the algorithm, the RECOMMENDED value for
 the Resolution Delay is 50 milliseconds.
