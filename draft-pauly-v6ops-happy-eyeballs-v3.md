@@ -462,9 +462,7 @@ Host" {{!RFC6535}} but is implemented inside the Happy Eyeballs library.
 
 Note that some IPv4 prefixes are scoped to a given host or network, such as
 0.0.0.0/8, 127.0.0.0/8, 169.254.0.0/16, and 255.255.255.255/32, and
-therefore do not require NAT64 address synthesis. Also, IPv4 addresses
-in the {{!RFC1918}} space can be routed incorrectly if the NAT64
-gateway does not have routes for that address space.
+therefore do not require NAT64 address synthesis.
 
 When an IPv4 address is passed into the library instead of a
 hostname, the device queries the network for the NAT64 prefix using
