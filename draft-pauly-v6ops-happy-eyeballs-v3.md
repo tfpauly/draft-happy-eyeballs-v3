@@ -283,20 +283,22 @@ the network to which it is attached.
 Next, the client SHOULD modify the ordered list to interleave
 protocols and address families. Whichever combination of protocol
 and address family is first in the list should be followed by an
-address of the other protocol type and same address family, and then
-an endpoint from the same protocol and other address family. For example,
+endpoint of the other protocol type and same address family, then an
+endpoint from the same protocol and other address family, and then an
+endpoint from the other protocol and other address family. For example,
 if the first address in the sorted list is a QUIC IPv6 address, then
 the first TCP IPv6 address should be moved up in the list to be second
-in the list, and then the first QUIC IPv4 address should be moved up
-in the list to be third in the list. An implementation MAY choose to
-favor one protocol or address family more by allowing multiple
-addresses of that protocol or family to be attempted before trying the
-other combinations. The number of contiguous addresses of the first
-combination of properties will be referred to as the "Preferred Protocol
-Combination Count" and can be a configurable value. This avoids waiting
-through a long list of addresses from a given address family using a
-given protocol if connectivity over a protocol or an address family is
-impaired.
+in the list, then the first QUIC IPv4 address should be moved up
+in the list to be third in the list, and then the first TCP IPv4
+address should be moved up in the list to be fourth in the list. An
+implementation MAY choose to favor one protocol or address family more
+by allowing multiple addresses of that protocol or family to be
+attempted before trying the other combinations. The number of contiguous
+addresses of the first combination of properties will be referred to as
+the "Preferred Protocol Combination Count" and can be a configurable
+value. This avoids waiting through a long list of addresses from a given
+address family using a given protocol if connectivity over a protocol
+or an address family is impaired.
 
 Note that the address selection described in this section only
 applies to destination addresses; Source Address Selection
