@@ -460,16 +460,10 @@ literals, the Happy Eyeballs engine will need to perform NAT64
 address synthesis for them. The solution is similar to "Bump-in-the-
 Host" {{!RFC6535}} but is implemented inside the Happy Eyeballs library.
 
-Note that some IPv4 prefixes are scoped to a given host or network, such as
-0.0.0.0/8, 127.0.0.0/8, 169.254.0.0/16, and 255.255.255.255/32, and
-therefore do not require NAT64 address synthesis.
-Additionally, the Well-Known Prefix {{!RFC6052}} MUST NOT be used to represent
-non-global IPv4 addresses, such as those defined in {{!RFC1918}}.
-
 When an IPv4 address is passed into the library instead of a
 hostname, the device queries the network for the NAT64 prefix using
 "Discovery of the IPv6 Prefix Used for IPv6 Address Synthesis"
-{{!RFC7050}}, or uses PREF64s received from Router Advertisements {{!RFC8781}}.
+{{!RFC7050}}, or uses PREF64s received from Router Advertisements.
 It then synthesizes an appropriate IPv6 address (or
 several) using the encoding described in "IPv6 Addressing of IPv4/
 IPv6 Translators" {{!RFC6052}}. The synthesized addresses are then
@@ -479,6 +473,11 @@ queries; connection attempts follow the algorithm described above
 
 Such translation also applies to any IPv4 address hints received
 in SVCB RRs.
+
+Note that some IPv4 prefixes are scoped to a given host or network, such as
+0.0.0.0/8, 127.0.0.0/8, 169.254.0.0/16, and 255.255.255.255/32, and
+therefore do not require NAT64 address synthesis.
+Similarly, there are additional restrictions on the use of the well-known NAT64 prefix (see Section 3.1 of {{!RFC6052}}) so clients can skip NAT64 address synthesis in such cases that will be rejected by the NAT64 translator.
 
 ## Hostnames with Broken AAAA Records {#broken}
 
