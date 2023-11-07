@@ -92,7 +92,7 @@ attempts.
 
 As compared to {{HEV2}}, this document adds support for incorporating
 SVCB / HTTPS resource records (RRs)
-{{!SVCB=I-D.ietf-dnsop-svcb-https}}. SVCB RRs provide alternative
+{{!SVCB=RFC9460}}. SVCB RRs provide alternative
 endpoints and associated information about protocol support, Encrypted
 ClientHello {{!ECH=I-D.ietf-tls-esni}} keys, address hints, among
 other relevant hints which may help speed up connection establishment
