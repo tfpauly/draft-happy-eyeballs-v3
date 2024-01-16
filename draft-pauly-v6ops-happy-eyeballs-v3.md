@@ -422,7 +422,10 @@ If, during the course of connection establishment, the DNS answers
 change by either adding resolved addresses (for example due to DNS
 push notifications {{?RFC8765}}) or removing previously resolved
 addresses (for example, due to expiry of the TTL on that DNS record),
-the client should react based on its current progress.
+the client should react based on its current progress. Additionally,
+if A and AAAA records are received, addresses received via SVCB hints
+SHOULD be removed from the list, as specified in {{Section 7.3 of
+SVCB}}.
 
 If an address is removed from the list that already had a connection
 attempt started, the connection attempt SHOULD NOT be canceled, but
