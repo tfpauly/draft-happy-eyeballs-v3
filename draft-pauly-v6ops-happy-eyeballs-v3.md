@@ -249,7 +249,7 @@ If any of the answers were from SVCB RRs, they SHOULD be sorted ahead
 of any answers that were not associated with a SVCB record.
 
 If the client supports TLS Encrypted Client Hello (ECH) discovery through
-SVCB records {{!SVCB-ECH=I-D.sbn-tls-svcb-ech}}, depending on the
+SVCB records {{!SVCB-ECH=I-D.draft-ietf-tls-svcb-ech}}, depending on the
 client's preference to handle ECH, the client SHOULD sort addresses with
 ECH keys taking priority to maintain privacy when attempting connection
 establishment.
@@ -306,6 +306,7 @@ applies to destination addresses; Source Address Selection
 is out of scope of this document.
 
 ## Sorting Based on Priority {#priority}
+
 SVCB {{SVCB}} RRs indicate a priority for each ServiceMode response.
 This priority applies to any IPv4 or IPv6 address hints in the RR
 itself, as well as any addresses received on A or AAAA queries for the
@@ -323,83 +324,88 @@ sorted according to that SVCB RR's priority.
 # Connection Attempts {#connections}
 
 Once the list of addresses received up to this point has been
-constructed, the client will attempt to make connections. In order
-to avoid unreasonable network load, connection attempts SHOULD NOT be
+constructed, the client will attempt to make connections. In order to
+avoid unreasonable network load, connection attempts SHOULD NOT be
 made simultaneously. Instead, one connection attempt to a single
-address is started first, followed by the others in the list, one at
-a time. Starting a new connection attempt does not affect previous
-attempts, as multiple connection attempts may occur in parallel.
-Once one of the connection attempts succeeds ({{success}}), all other
+address is started first, followed by the others in the list, one at a
+time. Starting a new connection attempt does not affect previous
+attempts, as multiple connection attempts may occur in parallel.  Once
+one of the connection attempts succeeds ({{success}}), all other
 connections attempts that have not yet succeeded SHOULD be canceled.
-Any address that was not yet attempted as a connection SHOULD be ignored.
-At that time, the asynchronous DNS query MAY be canceled as new addresses
-will not be used for this connection. However, the DNS client resolver
-SHOULD still process DNS replies from the network for a short period of
-time (recommended to be 1 second), as they will populate the DNS cache
-and can be used for subsequent connections.
+Any address that was not yet attempted as a connection SHOULD be
+ignored.  At that time, the asynchronous DNS query MAY be canceled as
+new addresses will not be used for this connection. However, the DNS
+client resolver SHOULD still process DNS replies from the network for
+a short period of time (recommended to be 1 second), as they will
+populate the DNS cache and can be used for subsequent connections.
 
 A simple implementation can have a fixed delay for how long to wait
-before starting the next connection attempt. This delay is referred
-to as the "Connection Attempt Delay". One recommended value for a
-default delay is 250 milliseconds. A more nuanced implementation's
-delay should correspond to the time when the previous attempt is
-retrying its handshake (such as sending a second TCP SYN or a second
-QUIC Initial), based on the retransmission timer ({{!RFC6298}},
+before starting the next connection attempt. This delay is referred to
+as the "Connection Attempt Delay". One recommended value for a default
+delay is 250 milliseconds. A more nuanced implementation's delay
+should correspond to the time when the previous attempt is retrying
+its handshake (such as sending a second TCP SYN or a second QUIC
+Initial), based on the retransmission timer ({{!RFC6298}},
 {{?RFC9002}}). If the client has historical RTT data gathered from
 other connections to the same host or prefix, it can use this
 information to influence its delay. Note that this algorithm should
-only try to approximate the time of the first handshake packet retransmission, and
-not any further retransmissions that may be influenced by exponential
-timer back off.
+only try to approximate the time of the first handshake packet
+retransmission, and not any further retransmissions that may be
+influenced by exponential timer back off.
 
-The Connection Attempt Delay MUST have a lower bound, especially if
-it is computed using historical data. More specifically, a
-subsequent connection MUST NOT be started within 10 milliseconds of
-the previous attempt. The recommended minimum value is 100
-milliseconds, which is referred to as the "Minimum Connection Attempt
-Delay". This minimum value is required to avoid congestion collapse
-in the presence of high packet-loss rates. The Connection Attempt
-Delay SHOULD have an upper bound, referred to as the "Maximum
-Connection Attempt Delay". The current recommended value is 2
-seconds.
+The Connection Attempt Delay MUST have a lower bound, especially if it
+is computed using historical data. More specifically, a subsequent
+connection MUST NOT be started within 10 milliseconds of the previous
+attempt. The recommended minimum value is 100 milliseconds, which is
+referred to as the "Minimum Connection Attempt Delay". This minimum
+value is required to avoid congestion collapse in the presence of high
+packet-loss rates. The Connection Attempt Delay SHOULD have an upper
+bound, referred to as the "Maximum Connection Attempt Delay". The
+current recommended value is 2 seconds.
 
 ## Determining successful connection establishment {#success}
 
-The determination of when a connection attempt has successfully completed
-(and other attempts can be cancelled) depends on the protocols being used
-to establish a connection. This can involve one or more protocol handshakes.
+The determination of when a connection attempt has successfully
+completed (and other attempts can be cancelled) depends on the
+protocols being used to establish a connection. This can involve one
+or more protocol handshakes.
 
-Client connections that use TCP only (without TLS or another protocol on top, such
-as for unencrypted HTTP connections) will determine successful establishment based
-on completing the TCP handshake only. When TLS is used on top of of TCP (such
-as for encrypted HTTP connections), clients MAY choose to wait for the TLS handshake to
-successfully complete before cancelling other connection attempts. This is particularly
-useful for networks in which a TCP-terminating proxy might be causing TCP handshakes
-to succeed quickly, even though end-to-end connectivity with the TLS-terminating
-server will fail. QUIC connections inherently include a secure handshake in their main
-handshakes, and thus only need to wait for a single handshake to complete.
+Client connections that use TCP only (without TLS or another protocol
+on top, such as for unencrypted HTTP connections) will determine
+successful establishment based on completing the TCP handshake
+only. When TLS is used on top of of TCP (such as for encrypted HTTP
+connections), clients MAY choose to wait for the TLS handshake to
+successfully complete before cancelling other connection
+attempts. This is particularly useful for networks in which a
+TCP-terminating proxy might be causing TCP handshakes to succeed
+quickly, even though end-to-end connectivity with the TLS-terminating
+server will fail. QUIC connections inherently include a secure
+handshake in their main handshakes, and thus only need to wait for a
+single handshake to complete.
 
-While transport layer handshakes generally do not have restrictions on attempts
-to establish a connection, some cryptographic handshakes may be dependent on
-ServiceMode SVCB RRs and could impose limitations on establishing a connection.
-For instance, ECH-capable clients may become SVCB-reliant clients
-({{Section 3 of SVCB}}) when SVCB RRs contain the
-"ech" SvcParamKey {{!ECH=I-D.ietf-tls-svcb-ech}}. If the client is either an SVCB-reliant client or a
-SVCB-optional client that might switch to SVCB-reliant connection
-establishment during the process, the client MUST wait for SVCB RRs before
-proceeding with the cryptographic handshake.
+While transport layer handshakes generally do not have restrictions on
+attempts to establish a connection, some cryptographic handshakes may
+be dependent on ServiceMode SVCB RRs and could impose limitations on
+establishing a connection.  For instance, ECH-capable clients may
+become SVCB-reliant clients ({{Section 3 of SVCB}}) when SVCB RRs
+contain the "ech" SvcParamKey {{!ECH=I-D.ietf-tls-svcb-ech}}. If the
+client is either an SVCB-reliant client or a SVCB-optional client that
+might switch to SVCB-reliant connection establishment during the
+process, the client MUST wait for SVCB RRs before proceeding with the
+cryptographic handshake.
 
 ## Handling Application Layer Protocol Negotiation (ALPN)
 
 The `alpn` and `no-default-alpn` SvcParamKeys in SVCB RRs indicate the
-"SVCB ALPN set," which specifies the underlying transport protocols supported
-by the associated service endpoint. When the client requests SVCB RRs, it
-SHOULD perform the procedure specified in {{Section 7.1.2 of SVCB}} to determine
-the underlying transport protocols that both the client and the service endpoint
-support. The client SHOULD NOT attempt to make a connection to a service
-endpoint whose SVCB ALPN set does not contain any protocols that the client
-supports. For example, suppose the client is an HTTP client that only supports
-TCP-based versions such as HTTP/1.1 and HTTP/2, and it receives the following
+"SVCB ALPN set," which specifies the underlying transport protocols
+supported by the associated service endpoint. When the client requests
+SVCB RRs, it SHOULD perform the procedure specified in {{Section 7.1.2
+of SVCB}} to determine the underlying transport protocols that both
+the client and the service endpoint support. The client SHOULD NOT
+attempt to make a connection to a service endpoint whose SVCB ALPN set
+does not contain any protocols that the client supports. For example,
+suppose the client is an HTTP client that only supports TCP-based
+versions such as HTTP/1.1 and HTTP/2, and it receives the following
 HTTPS RR:
 
 ~~~
@@ -407,14 +413,16 @@ HTTPS RR:
      alpn="h3" no-default-alpn ipv6hint=2001:db8::2 )
 ~~~
 
-In this case, attempting a connection to 2001:db8::2 or any other address resolved
-for `svc1.example.com` would be incorrect because the RR indicates that
-`svc1.example.com` only supports HTTP/3, based on the ALPN value of "h3".
+In this case, attempting a connection to 2001:db8::2 or any other
+address resolved for `svc1.example.com` would be incorrect because the
+RR indicates that `svc1.example.com` only supports HTTP/3, based on
+the ALPN value of "h3".
 
-If the client is an HTTP client that supports both Alt-Svc {{?AltSvc=RFC7838}}
-and SVCB (HTTPS) RRs, the client SHOULD ensure that connection attempts are
-consistent with both the Alt-Svc parameters and the SVCB ALPN set, as specified
-in {{Section 9.3 of SVCB}}.
+If the client is an HTTP client that supports both Alt-Svc
+{{?AltSvc=RFC7838}} and SVCB (HTTPS) RRs, the client SHOULD ensure
+that connection attempts are consistent with both the Alt-Svc
+parameters and the SVCB ALPN set, as specified in {{Section 9.3 of
+SVCB}}.
 
 # DNS Answer Changes During Happy Eyeballs Connection Setup {#changes}
 
