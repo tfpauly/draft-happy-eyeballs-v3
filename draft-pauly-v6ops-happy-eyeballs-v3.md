@@ -249,7 +249,7 @@ If any of the answers were from SVCB RRs, they SHOULD be sorted ahead
 of any answers that were not associated with a SVCB record.
 
 If the client supports TLS Encrypted Client Hello (ECH) discovery through
-SVCB records {{!SVCB-ECH=I-D.draft-ietf-tls-svcb-ech}}, depending on the
+SVCB records {{!SVCB-ECH=I-D.ietf-tls-svcb-ech}}, depending on the
 client's preference to handle ECH, the client SHOULD sort addresses with
 ECH keys taking priority to maintain privacy when attempting connection
 establishment.
@@ -388,7 +388,7 @@ attempts to establish a connection, some cryptographic handshakes may
 be dependent on ServiceMode SVCB RRs and could impose limitations on
 establishing a connection.  For instance, ECH-capable clients may
 become SVCB-reliant clients ({{Section 3 of SVCB}}) when SVCB RRs
-contain the "ech" SvcParamKey {{!ECH=I-D.ietf-tls-svcb-ech}}. If the
+contain the "ech" SvcParamKey {{SVCB-ECH}}. If the
 client is either an SVCB-reliant client or a SVCB-optional client that
 might switch to SVCB-reliant connection establishment during the
 process, the client MUST wait for SVCB RRs before proceeding with the
