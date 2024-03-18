@@ -479,10 +479,11 @@ Note that some IPv4 prefixes are scoped to a given host or network, such as
 therefore do not require NAT64 address synthesis.
 
 When an IPv4 address is passed into the library instead of a
-hostname, the device queries the network for the NAT64 prefix using
+hostname, the device SHOULD use PREF64s received from Router
+Advertisements {{!RFC8781}}. If the network does not provide PREF64s,
+the device SHOULD query the network for the NAT64 prefix using
 "Discovery of the IPv6 Prefix Used for IPv6 Address Synthesis"
-{{!RFC7050}}, or uses PREF64s received from Router Advertisements {{!RFC8781}}.
-It then synthesizes an appropriate IPv6 address (or
+{{!RFC7050}}. It then synthesizes an appropriate IPv6 address (or
 several) using the encoding described in "IPv6 Addressing of IPv4/
 IPv6 Translators" {{!RFC6052}}. The synthesized addresses are then
 inserted into the list of addresses as if they were results from DNS
