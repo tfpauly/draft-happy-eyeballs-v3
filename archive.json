@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-11T00:19:28.835616+00:00",
+  "timestamp": "2024-04-14T00:22:09.457895+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -640,7 +640,7 @@
         },
         {
           "author": "ekinnear",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "If you already had a connection attempt partway through succeeding to an ipv6hint (perhaps at some later point during the handshakes that are necessary), are we really going to cancel that if we get back AAAA responses that don't include that address?",
           "createdAt": "2023-12-09T06:08:01Z",
           "updatedAt": "2023-12-09T06:08:01Z"
@@ -654,7 +654,7 @@
         },
         {
           "author": "ekinnear",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "Excellent, that's much more consistent with what's already in the doc and what's generally done in practice.",
           "createdAt": "2023-12-11T22:53:45Z",
           "updatedAt": "2023-12-11T22:53:45Z"
@@ -2520,7 +2520,7 @@
             "abbreviatedOid": "90af2ef"
           },
           "author": "ekinnear",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2023-11-07T08:44:23Z",
@@ -2812,6 +2812,48 @@
           "body": "Great! HEv2 was published before PREF64, glad we have an even better solution for HEv3",
           "createdAt": "2024-03-19T01:04:04Z",
           "updatedAt": "2024-03-19T01:04:04Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "id": "PR_kwDOKH7CuM5sUCkU",
+      "title": "Editorial updates to charter",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/45",
+      "state": "MERGED",
+      "author": "ekinnear",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Editorial updates to charter\n\nMostly minor wording tweaks, a few updates.",
+      "createdAt": "2024-04-11T03:29:15Z",
+      "updatedAt": "2024-04-11T04:01:09Z",
+      "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
+      "baseRefName": "main",
+      "baseRefOid": "c2b41a9fda81e8abd5448e693c3534f1bf033c82",
+      "headRepository": "ekinnear/draft-happy-eyeballs-v3",
+      "headRefName": "ek/charter_editorial",
+      "headRefOid": "d5582f6f57ea91508397507664a9244071673cc7",
+      "closedAt": "2024-04-11T04:01:08Z",
+      "mergedAt": "2024-04-11T04:01:08Z",
+      "mergedBy": "tfpauly",
+      "mergeCommit": {
+        "oid": "4a9c34f4ebf72524c840765c0f7f5dfcc445e342"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKH7CuM52znwf",
+          "commit": {
+            "abbreviatedOid": "d5582f6"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-11T04:01:04Z",
+          "updatedAt": "2024-04-11T04:01:04Z",
           "comments": []
         }
       ]
