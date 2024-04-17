@@ -12,18 +12,22 @@ Since the publication of RFC 8305, several changes to common protocols and
 server deployments have occurred that require a revision of the algorithm. Some 
 of these include:
 
-- Standardization of QUIC
+- Standardization and increased use of QUIC, which require updating the
+  TCP-specific parts of Happy Eyeballs.
 - Introduction of Service Binding DNS resource records (SVCB and HTTPS RRs) that
   provide richer information about available services and record priorities
-- Preparations for the standardization of TLS Encrypted Client Hello
-- Increased deployment and refinement of IPv6-only and IPv6-mostly networks
+  and change the selection and sorting of addresses for Happy Eyeballs.
+- Preparations for the standardization of TLS Encrypted Client Hello.
+- Increased deployment and refinement of IPv6-only and IPv6-mostly networks.
 
 The HAPPY working group will deliver an updated version of the Happy Eyeballs 
 algorithm that incorporates changes to account for these protocol developments.
 The algorithm should focus on deployed network scenarios and should be guided by
 data on user experience focused performance in those scenarios. The working 
-group will also consider how to report misconfigured deployments that may be 
-hidden when the algorithm automatically switches from one technology to another.
+group will also document the impact of the Happy Eyeballs algorithm on the
+detection of misconfigured deployments, and document recommendations on how
+to report such cases that might otherwise be hidden due to automatic switching
+from one technology to another.
 
 The working group will focus on connection establishment where the client knows 
 a hostname and needs to establish a connection to a server IP address using a 
@@ -38,5 +42,7 @@ HTTPBIS, DNSOP, and TLS.
 The working group’s core deliverables are:
 
 - Develop a standards-track document for Happy Eyeballs Version 3
-- Measure the effectiveness of the algorithm during development
+- Measure the effectiveness of the algorithm during development. This effort
+  does not necessarily need to lead to a published document, but should be
+  captured in presentations, working group wikis, etc.
 - Document approaches for reporting misconfigured networks or server deployments
