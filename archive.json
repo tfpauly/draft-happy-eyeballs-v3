@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-18T00:18:53.271683+00:00",
+  "timestamp": "2024-04-21T00:20:48.132484+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -776,6 +776,67 @@
       "createdAt": "2024-03-18T23:08:09Z",
       "updatedAt": "2024-03-19T04:06:11Z",
       "closedAt": "2024-03-19T04:06:11Z",
+      "comments": []
+    },
+    {
+      "number": 46,
+      "id": "I_kwDOKH7CuM6GQKKY",
+      "title": "Unclear deliverable",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/46",
+      "state": "OPEN",
+      "author": "zaheduzzaman",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "https://github.com/tfpauly/draft-happy-eyeballs-v3/blob/757ed4e8c5482ca93379bb20b8c4a948855c2543/charter.md?plain=1#L48\r\n\r\nIs this some we will publish as rfc? or is this something that we will record somewhere in the wg wiki? ",
+      "createdAt": "2024-04-19T08:16:45Z",
+      "updatedAt": "2024-04-20T17:31:44Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "nidhijaju",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I had a similar question, and I think we said we could either have a separate RFC or wiki page, depending on how concrete/deployable the ideas are.\r\n\r\nWe could maybe say something like: \"Publish a document or wiki page documenting approaches for reporting misconfigured networks or server deployments\"?",
+          "createdAt": "2024-04-19T08:47:38Z",
+          "updatedAt": "2024-04-19T08:47:38Z"
+        },
+        {
+          "author": "DavidSchinazi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Do we really need this deliverable? I know there are folks who want to solve this problem, but it's unclear to me if there's agreement on the scope of that work.",
+          "createdAt": "2024-04-19T20:20:33Z",
+          "updatedAt": "2024-04-19T20:20:33Z"
+        },
+        {
+          "author": "ekinnear",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Seems like we could drop the deliverable entirely, but leave it in scope in the charter. If there's the energy to get it done, fantastic. If not, we're exactly where we are today, no problem. ",
+          "createdAt": "2024-04-20T01:31:32Z",
+          "updatedAt": "2024-04-20T01:31:32Z"
+        },
+        {
+          "author": "DavidSchinazi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "That sounds ideal",
+          "createdAt": "2024-04-20T17:31:43Z",
+          "updatedAt": "2024-04-20T17:31:43Z"
+        }
+      ]
+    },
+    {
+      "number": 47,
+      "id": "I_kwDOKH7CuM6GQLdz",
+      "title": "one liner to emphasis how TLS Encrypted Client Hello impacts",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/47",
+      "state": "OPEN",
+      "author": "zaheduzzaman",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "https://github.com/tfpauly/draft-happy-eyeballs-v3/blob/757ed4e8c5482ca93379bb20b8c4a948855c2543/charter.md?plain=1#L20\r\n\r\nWe should have one line recording the impact on current deployment. why does it matter??",
+      "createdAt": "2024-04-19T08:19:43Z",
+      "updatedAt": "2024-04-19T08:19:43Z",
+      "closedAt": null,
       "comments": []
     }
   ],
