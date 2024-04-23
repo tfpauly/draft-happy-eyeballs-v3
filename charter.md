@@ -24,8 +24,8 @@ The HAPPY working group will deliver an updated version of the Happy Eyeballs
 algorithm that incorporates changes to account for these protocol developments.
 The algorithm should focus on deployed network scenarios and should be guided by
 data on user experience focused performance in those scenarios. The working 
-group will also document the impact of the Happy Eyeballs algorithm on the
-detection of misconfigured deployments, and document recommendations on how
+group can also document the impact of the Happy Eyeballs algorithm on the
+detection of misconfigured deployments and can document recommendations on how
 to report such cases that might otherwise be hidden due to automatic switching
 from one technology to another.
 
@@ -45,4 +45,3 @@ The working group’s core deliverables are:
 - Measure the effectiveness of the algorithm during development. This effort
   does not necessarily need to lead to a published document, but should be
   captured in presentations, working group wikis, etc.
-- Document approaches for reporting misconfigured networks or server deployments
