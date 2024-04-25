@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-23T00:19:14.110932+00:00",
+  "timestamp": "2024-04-25T00:20:46.623607+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -835,9 +835,17 @@
       "labels": [],
       "body": "https://github.com/tfpauly/draft-happy-eyeballs-v3/blob/757ed4e8c5482ca93379bb20b8c4a948855c2543/charter.md?plain=1#L20\r\n\r\nWe should have one line recording the impact on current deployment. why does it matter??",
       "createdAt": "2024-04-19T08:19:43Z",
-      "updatedAt": "2024-04-19T08:19:43Z",
+      "updatedAt": "2024-04-23T23:00:00Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "ekinnear",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Assuming that this is a question about why Happy Eyeballs would apply to ECH at all, can add some text to indicate that there may be cases where some candidate endpoints will have ECH keys available and some candidates may not have those keys available, and that should influence policy when racing between candidates.",
+          "createdAt": "2024-04-23T22:51:18Z",
+          "updatedAt": "2024-04-23T23:00:00Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -2915,6 +2923,59 @@
           "body": "",
           "createdAt": "2024-04-11T04:01:04Z",
           "updatedAt": "2024-04-11T04:01:04Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 48,
+      "id": "PR_kwDOKH7CuM5th8zs",
+      "title": "Remove unclear deliverable from charter",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/48",
+      "state": "OPEN",
+      "author": "ekinnear",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Fixes #46",
+      "createdAt": "2024-04-23T22:49:51Z",
+      "updatedAt": "2024-04-23T23:54:09Z",
+      "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
+      "baseRefName": "main",
+      "baseRefOid": "757ed4e8c5482ca93379bb20b8c4a948855c2543",
+      "headRepository": "ekinnear/draft-happy-eyeballs-v3",
+      "headRefName": "ek/charter_remove_unclear",
+      "headRefOid": "c3ee8e987e585e9fbdb60bd006e5ac76f5f28695",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKH7CuM54T0bT",
+          "commit": {
+            "abbreviatedOid": "c3ee8e9"
+          },
+          "author": "DavidSchinazi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-23T22:51:30Z",
+          "updatedAt": "2024-04-23T22:51:30Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKH7CuM54UCX6",
+          "commit": {
+            "abbreviatedOid": "c3ee8e9"
+          },
+          "author": "nidhijaju",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-23T23:54:09Z",
+          "updatedAt": "2024-04-23T23:54:09Z",
           "comments": []
         }
       ]
