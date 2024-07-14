@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-11T00:21:27.818271+00:00",
+  "timestamp": "2024-07-14T00:23:30.767496+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -52,6 +52,11 @@
       "name": "discuss",
       "description": "",
       "color": "F1585F"
+    },
+    {
+      "name": "charter",
+      "description": "",
+      "color": "fbca04"
     }
   ],
   "issues": [
@@ -783,15 +788,17 @@
       "id": "I_kwDOKH7CuM6GQKKY",
       "title": "Unclear deliverable",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/46",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "zaheduzzaman",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "charter"
+      ],
       "body": "https://github.com/tfpauly/draft-happy-eyeballs-v3/blob/757ed4e8c5482ca93379bb20b8c4a948855c2543/charter.md?plain=1#L48\r\n\r\nIs this some we will publish as rfc? or is this something that we will record somewhere in the wg wiki? ",
       "createdAt": "2024-04-19T08:16:45Z",
-      "updatedAt": "2024-04-20T17:31:44Z",
-      "closedAt": null,
+      "updatedAt": "2024-07-12T22:19:16Z",
+      "closedAt": "2024-07-12T22:19:15Z",
       "comments": [
         {
           "author": "nidhijaju",
@@ -832,10 +839,12 @@
       "author": "zaheduzzaman",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "charter"
+      ],
       "body": "https://github.com/tfpauly/draft-happy-eyeballs-v3/blob/757ed4e8c5482ca93379bb20b8c4a948855c2543/charter.md?plain=1#L20\r\n\r\nWe should have one line recording the impact on current deployment. why does it matter??",
       "createdAt": "2024-04-19T08:19:43Z",
-      "updatedAt": "2024-04-23T23:00:00Z",
+      "updatedAt": "2024-07-12T22:19:25Z",
       "closedAt": null,
       "comments": [
         {
@@ -2932,24 +2941,26 @@
       "id": "PR_kwDOKH7CuM5th8zs",
       "title": "Remove unclear deliverable from charter",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/48",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "ekinnear",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Fixes #46",
       "createdAt": "2024-04-23T22:49:51Z",
-      "updatedAt": "2024-04-23T23:54:09Z",
+      "updatedAt": "2024-07-12T22:19:15Z",
       "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
       "baseRefName": "main",
       "baseRefOid": "757ed4e8c5482ca93379bb20b8c4a948855c2543",
       "headRepository": "ekinnear/draft-happy-eyeballs-v3",
       "headRefName": "ek/charter_remove_unclear",
       "headRefOid": "c3ee8e987e585e9fbdb60bd006e5ac76f5f28695",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-07-12T22:19:15Z",
+      "mergedAt": "2024-07-12T22:19:15Z",
+      "mergedBy": "tfpauly",
+      "mergeCommit": {
+        "oid": "5a792e2773d93614d48666d29475da1eb11d8c47"
+      },
       "comments": [],
       "reviews": [
         {
