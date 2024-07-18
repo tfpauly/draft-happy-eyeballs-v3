@@ -32,10 +32,10 @@ from one technology to another.
 The working group will focus on a connection establishment algorithm that
 runs on clients. The algorithm takes as input a fully-qualified domain name
 (FQDN), and results in a single established connection to a single server IP
-address on a single network. While the algorithm could apply to scenarios with multiple
-networks to choose between or to use simultaneously, or could deal with pools of
-multiple connections, such scenarios are out of scope for the working group
-deliverables.
+address on a single network. While the algorithm could apply to scenarios with
+multiple networks to choose between or to use simultaneously, or could deal
+with pools of multiple connections, such scenarios are out of scope for the
+working group deliverables.
 
 The rationale for having a working group for this work, instead of hosting it in
 V6OPS, is the increased cross-functional nature of the algorithm. As such, the 
