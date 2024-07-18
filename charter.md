@@ -29,10 +29,10 @@ detection of misconfigured deployments and can document recommendations on how
 to report such cases that might otherwise be hidden due to automatic switching
 from one technology to another.
 
-The working group will focus on a connection establishment algorithm for a
-client that starts with a fully-qualified domain name (FQDN) and wants to end
-up with a single established connection to a single server IP address on a
-single network. While the algorithm could apply to scenarios with multiple
+The working group will focus on a connection establishment algorithm that
+runs on clients. The algorithm takes as input a fully-qualified domain name
+(FQDN), and results in a single established connection to a single server IP
+address on a single network. While the algorithm could apply to scenarios with multiple
 networks to choose between or use simultaneously, or deal with pools of
 multiple connections, such expansions are out of scope for the working group
 deliverables.
