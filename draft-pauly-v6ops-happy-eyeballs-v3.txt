@@ -5,10 +5,10 @@
 Network Working Group                                           T. Pauly
 Internet-Draft                                                 Apple Inc
 Intended status: Informational                               D. Schinazi
-Expires: 13 January 2025                                         N. Jaju
+Expires: 22 January 2025                                         N. Jaju
                                                             K. Ishibashi
                                                               Google LLC
-                                                            12 July 2024
+                                                            21 July 2024
 
 
     Happy Eyeballs Version 3: Better Connectivity Using Concurrency
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 January 2025.
+   This Internet-Draft will expire on 22 January 2025.
 
 Copyright Notice
 
