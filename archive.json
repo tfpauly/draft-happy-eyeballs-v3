@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-18T00:20:53.887897+00:00",
+  "timestamp": "2024-07-21T00:23:33.884745+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -855,6 +855,40 @@
           "updatedAt": "2024-04-23T23:00:00Z"
         }
       ]
+    },
+    {
+      "number": 49,
+      "id": "I_kwDOKH7CuM6P80io",
+      "title": "Eric V charter comments",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/49",
+      "state": "OPEN",
+      "author": "tfpauly",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "charter"
+      ],
+      "body": "> First congratulations for the WG acronym!\r\n>  \r\n> On the charter, I find `using a particular network`either ambiguous or very limitative. It appears that a node with two network attachments (e.g., Wi-Fi and 3GPP) won\u2019t use HEv3 but only rely on RFC 6724(-bis). Am I reading this right ?\r\n>  \r\n> Also suggest s/the client knows a hostname/the client knows a FQDN/",
+      "createdAt": "2024-07-18T02:40:20Z",
+      "updatedAt": "2024-07-18T02:40:21Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 51,
+      "id": "I_kwDOKH7CuM6QBEto",
+      "title": "Inventory of HE-like Uses",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/51",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Some HE variants were specified out there as well. It would be great to inventory those and see if they can be naturally addressed by HEv3. \r\n\r\nSee an example of such uses at https://datatracker.ietf.org/doc/html/rfc9132#name-happy-eyeballs-for-dots-sig. That variant was specified with the following in mind:\r\n\r\n> Such a procedure is needed to avoid experiencing long connection delays. For example, if an IPv4 path to a DOTS server is functional, but the DOTS server's IPv6 path is nonfunctional, a dual-stack DOTS client may experience a significant connection delay compared to an IPv4-only DOTS client in the same network conditions. The other problem is that if a middlebox between the DOTS client and DOTS server is configured to block UDP traffic, the DOTS client will fail to establish a DTLS association with the DOTS server; consequently, it will have to fall back to TLS over TCP, thereby incurring significant connection delays.\r\n\r\nPlease refer to the RFC for more details, including deviations vs [RFC8305](https://datatracker.ietf.org/doc/html/rfc8305).\r\n\r\nI suggest to a add a charter item to inventory such uses.\r\n",
+      "createdAt": "2024-07-18T12:14:53Z",
+      "updatedAt": "2024-07-18T12:14:53Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -2987,6 +3021,183 @@
           "body": "",
           "createdAt": "2024-04-23T23:54:09Z",
           "updatedAt": "2024-04-23T23:54:09Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 50,
+      "id": "PR_kwDOKH7CuM51tzNO",
+      "title": "Clarify out-of-scope",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/50",
+      "state": "OPEN",
+      "author": "tfpauly",
+      "authorAssociation": "OWNER",
+      "assignees": [
+        "tfpauly"
+      ],
+      "labels": [
+        "discuss",
+        "charter"
+      ],
+      "body": "Closes #49",
+      "createdAt": "2024-07-18T02:46:22Z",
+      "updatedAt": "2024-07-19T00:06:11Z",
+      "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
+      "baseRefName": "main",
+      "baseRefOid": "5a792e2773d93614d48666d29475da1eb11d8c47",
+      "headRepository": "tfpauly/draft-happy-eyeballs-v3",
+      "headRefName": "tfpauly-patch-2",
+      "headRefOid": "7f538180c860116bf33f771b346f46c055a09615",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKH7CuM6CPE-i",
+          "commit": {
+            "abbreviatedOid": "98001eb"
+          },
+          "author": "nidhijaju",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Content looks good to me, thank you! :)",
+          "createdAt": "2024-07-18T07:45:35Z",
+          "updatedAt": "2024-07-18T07:58:10Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "```suggestion\r\nclient that starts with a fully-qualified domain name (FQDN) and wants to\r\nobtain a single established connection to a single server IP address on a\r\n```\r\nNo strong opinion, but \"end up with\" just sounded a bit weird.",
+              "createdAt": "2024-07-18T07:45:35Z",
+              "updatedAt": "2024-07-18T07:58:10Z"
+            },
+            {
+              "originalPosition": 12,
+              "body": "```suggestion\r\nnetworks to choose between or to use simultaneously, or could deal with pools of\r\n```\r\nNot totally sure, but I think the added words add clarity to the \"or\"s.",
+              "createdAt": "2024-07-18T07:48:16Z",
+              "updatedAt": "2024-07-18T07:58:10Z"
+            },
+            {
+              "originalPosition": 13,
+              "body": "I think \"expansions\" is fine, but wondering if \"circumstances\" or \"situations\" or some other word is better?",
+              "createdAt": "2024-07-18T07:57:00Z",
+              "updatedAt": "2024-07-18T07:58:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6CUf5R",
+          "commit": {
+            "abbreviatedOid": "98001eb"
+          },
+          "author": "DavidSchinazi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-18T16:53:53Z",
+          "updatedAt": "2024-07-18T16:53:54Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "+1. I also don't love the personification (the use of the word \"wants\"). How about something like:\r\n\r\n```\r\nThe working group will focus on a connection establishment algorithm that\r\nruns on clients. The algorithm takes as input a fully-qualified domain name\r\n(FQDN), and outputs a single established connection to a single server IP\r\naddress on a single network.\r\n```",
+              "createdAt": "2024-07-18T16:53:54Z",
+              "updatedAt": "2024-07-18T16:53:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6CWn2x",
+          "commit": {
+            "abbreviatedOid": "98001eb"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-18T21:46:29Z",
+          "updatedAt": "2024-07-18T21:46:30Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "```suggestion\r\nThe working group will focus on a connection establishment algorithm that\r\nruns on clients. The algorithm takes as input a fully-qualified domain name\r\n(FQDN), and results in a single established connection to a single server IP\r\naddress on a single network. While the algorithm could apply to scenarios with multiple\r\n```",
+              "createdAt": "2024-07-18T21:46:29Z",
+              "updatedAt": "2024-07-18T21:46:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6CWoBp",
+          "commit": {
+            "abbreviatedOid": "98001eb"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-18T21:46:52Z",
+          "updatedAt": "2024-07-18T21:46:52Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "Cool, took this suggestion with one minor edit!",
+              "createdAt": "2024-07-18T21:46:52Z",
+              "updatedAt": "2024-07-18T21:46:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6CWoeJ",
+          "commit": {
+            "abbreviatedOid": "08417ab"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-18T21:47:52Z",
+          "updatedAt": "2024-07-18T21:47:53Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "Maybe scenarios:\r\n```suggestion\r\nmultiple connections, such scenarios are out of scope for the working group\r\n```",
+              "createdAt": "2024-07-18T21:47:52Z",
+              "updatedAt": "2024-07-18T21:47:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6CWon2",
+          "commit": {
+            "abbreviatedOid": "44647f1"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-07-18T21:48:14Z",
+          "updatedAt": "2024-07-18T21:48:15Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "```suggestion\r\naddress on a single network. While the algorithm could apply to scenarios with\r\nmultiple networks to choose between or to use simultaneously, or could deal\r\nwith pools of multiple connections, such scenarios are out of scope for the\r\nworking group deliverables.\r\n\r\n```",
+              "createdAt": "2024-07-18T21:48:14Z",
+              "updatedAt": "2024-07-18T21:48:15Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6CXDS_",
+          "commit": {
+            "abbreviatedOid": "7f53818"
+          },
+          "author": "DavidSchinazi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-07-19T00:06:11Z",
+          "updatedAt": "2024-07-19T00:06:11Z",
           "comments": []
         }
       ]
