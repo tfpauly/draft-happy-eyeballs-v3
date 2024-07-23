@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-21T00:23:33.884745+00:00",
+  "timestamp": "2024-07-23T00:21:20.798091+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -861,7 +861,7 @@
       "id": "I_kwDOKH7CuM6P80io",
       "title": "Eric V charter comments",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/49",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "tfpauly",
       "authorAssociation": "OWNER",
       "assignees": [],
@@ -870,8 +870,8 @@
       ],
       "body": "> First congratulations for the WG acronym!\r\n>  \r\n> On the charter, I find `using a particular network`either ambiguous or very limitative. It appears that a node with two network attachments (e.g., Wi-Fi and 3GPP) won\u2019t use HEv3 but only rely on RFC 6724(-bis). Am I reading this right ?\r\n>  \r\n> Also suggest s/the client knows a hostname/the client knows a FQDN/",
       "createdAt": "2024-07-18T02:40:20Z",
-      "updatedAt": "2024-07-18T02:40:21Z",
-      "closedAt": null,
+      "updatedAt": "2024-07-21T17:56:47Z",
+      "closedAt": "2024-07-21T17:56:47Z",
       "comments": []
     },
     {
@@ -886,9 +886,17 @@
       "labels": [],
       "body": "Some HE variants were specified out there as well. It would be great to inventory those and see if they can be naturally addressed by HEv3. \r\n\r\nSee an example of such uses at https://datatracker.ietf.org/doc/html/rfc9132#name-happy-eyeballs-for-dots-sig. That variant was specified with the following in mind:\r\n\r\n> Such a procedure is needed to avoid experiencing long connection delays. For example, if an IPv4 path to a DOTS server is functional, but the DOTS server's IPv6 path is nonfunctional, a dual-stack DOTS client may experience a significant connection delay compared to an IPv4-only DOTS client in the same network conditions. The other problem is that if a middlebox between the DOTS client and DOTS server is configured to block UDP traffic, the DOTS client will fail to establish a DTLS association with the DOTS server; consequently, it will have to fall back to TLS over TCP, thereby incurring significant connection delays.\r\n\r\nPlease refer to the RFC for more details, including deviations vs [RFC8305](https://datatracker.ietf.org/doc/html/rfc8305).\r\n\r\nI suggest to a add a charter item to inventory such uses.\r\n",
       "createdAt": "2024-07-18T12:14:53Z",
-      "updatedAt": "2024-07-18T12:14:53Z",
+      "updatedAt": "2024-07-21T02:09:40Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "nicorusti",
+          "authorAssociation": "NONE",
+          "body": "I agree that making an inventory would be a good exercise. \r\n\r\nAn HE-like approach could be useful as a transition mechanism to multipath / path aware networking architectures.  I believe someone of us (SCION enthusiasts) might have done some experimental work on this, let me try to find out",
+          "createdAt": "2024-07-21T02:09:38Z",
+          "updatedAt": "2024-07-21T02:09:38Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -3030,7 +3038,7 @@
       "id": "PR_kwDOKH7CuM51tzNO",
       "title": "Clarify out-of-scope",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/50",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "tfpauly",
       "authorAssociation": "OWNER",
       "assignees": [
@@ -3042,17 +3050,19 @@
       ],
       "body": "Closes #49",
       "createdAt": "2024-07-18T02:46:22Z",
-      "updatedAt": "2024-07-19T00:06:11Z",
+      "updatedAt": "2024-07-21T17:56:47Z",
       "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
       "baseRefName": "main",
       "baseRefOid": "5a792e2773d93614d48666d29475da1eb11d8c47",
       "headRepository": "tfpauly/draft-happy-eyeballs-v3",
       "headRefName": "tfpauly-patch-2",
       "headRefOid": "7f538180c860116bf33f771b346f46c055a09615",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-07-21T17:56:46Z",
+      "mergedAt": "2024-07-21T17:56:46Z",
+      "mergedBy": "tfpauly",
+      "mergeCommit": {
+        "oid": "65673daf11b65ff179d76fd5c52441cfd7315f22"
+      },
       "comments": [],
       "reviews": [
         {
