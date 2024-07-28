@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-25T00:21:02.035580+00:00",
+  "timestamp": "2024-07-28T00:23:45.558548+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -895,6 +895,32 @@
           "body": "I agree that making an inventory would be a good exercise. \r\n\r\nAn HE-like approach could be useful as a transition mechanism to multipath / path aware networking architectures.  I believe someone of us (SCION enthusiasts) might have done some experimental work on this, let me try to find out",
           "createdAt": "2024-07-21T02:09:38Z",
           "updatedAt": "2024-07-21T02:09:38Z"
+        }
+      ]
+    },
+    {
+      "number": 52,
+      "id": "I_kwDOKH7CuM6RAi9X",
+      "title": "WG name bikeshed",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/52",
+      "state": "OPEN",
+      "author": "tfpauly",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "charter"
+      ],
+      "body": "Heuristics and Algorithms to Prioritize Protocol deploYment (HAPPY)\r\nHeuristics and Algorithms to Prioritize Protocol Initiation (HAPPI)\r\nHeuristics and Algorithms to Prioritize Protocol Initiation or Establishment (HAPPIE)\r\n",
+      "createdAt": "2024-07-26T19:21:16Z",
+      "updatedAt": "2024-07-26T21:27:24Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "ekinnear",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "\ud83d\udeb2\ud83c\udfda\ufe0f\r\n\r\nHAPPY seems more clear for people, and initiation vs. deployment don't seem meaningfully distinct.\r\n\r\nHAPPI seems fine, a little less of a forced acronym. \r\n\r\nHAPPIE feels unnecessarily complex and is a bit close to HIPPIE, which is fine but maybe not what we're trying to indicate.\r\n\r\nSo I'd say HAPPY > HAPPI >>>> HAPPIE.",
+          "createdAt": "2024-07-26T21:27:23Z",
+          "updatedAt": "2024-07-26T21:27:23Z"
         }
       ]
     }
