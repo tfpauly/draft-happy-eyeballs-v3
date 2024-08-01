@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-07-30T00:21:25.500518+00:00",
+  "timestamp": "2024-08-01T00:23:50.482039+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -912,7 +912,7 @@
       ],
       "body": "Heuristics and Algorithms to Prioritize Protocol deploYment (HAPPY)\r\nHeuristics and Algorithms to Prioritize Protocol Initiation (HAPPI)\r\nHeuristics and Algorithms to Prioritize Protocol Initiation or Establishment (HAPPIE)\r\n",
       "createdAt": "2024-07-26T19:21:16Z",
-      "updatedAt": "2024-07-26T21:27:24Z",
+      "updatedAt": "2024-07-30T16:48:13Z",
       "closedAt": null,
       "comments": [
         {
@@ -921,6 +921,13 @@
           "body": "\ud83d\udeb2\ud83c\udfda\ufe0f\r\n\r\nHAPPY seems more clear for people, and initiation vs. deployment don't seem meaningfully distinct.\r\n\r\nHAPPI seems fine, a little less of a forced acronym. \r\n\r\nHAPPIE feels unnecessarily complex and is a bit close to HIPPIE, which is fine but maybe not what we're trying to indicate.\r\n\r\nSo I'd say HAPPY > HAPPI >>>> HAPPIE.",
           "createdAt": "2024-07-26T21:27:23Z",
           "updatedAt": "2024-07-26T21:27:23Z"
+        },
+        {
+          "author": "DavidSchinazi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "+1 to @ekinnear",
+          "createdAt": "2024-07-30T16:48:12Z",
+          "updatedAt": "2024-07-30T16:48:12Z"
         }
       ]
     }
