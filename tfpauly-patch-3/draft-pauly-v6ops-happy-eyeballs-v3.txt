@@ -5,10 +5,10 @@
 Network Working Group                                           T. Pauly
 Internet-Draft                                                 Apple Inc
 Intended status: Informational                               D. Schinazi
-Expires: 19 January 2025                                         N. Jaju
+Expires: 20 February 2025                                        N. Jaju
                                                             K. Ishibashi
                                                               Google LLC
-                                                            18 July 2024
+                                                          19 August 2024
 
 
     Happy Eyeballs Version 3: Better Connectivity Using Concurrency
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 January 2025.
+   This Internet-Draft will expire on 20 February 2025.
 
 Copyright Notice
 
@@ -680,9 +680,9 @@ Table of Contents
 
    [ECH]      Rescorla, E., Oku, K., Sullivan, N., and C. A. Wood, "TLS
               Encrypted Client Hello", Work in Progress, Internet-Draft,
-              draft-ietf-tls-esni-18, 4 March 2024,
+              draft-ietf-tls-esni-20, 4 August 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-tls-
-              esni-18>.
+              esni-20>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -749,9 +749,9 @@ Table of Contents
 
    [SVCB-ECH] Schwartz, B. M., Bishop, M., and E. Nygren, "Bootstrapping
               TLS Encrypted ClientHello with DNS Service Bindings", Work
-              in Progress, Internet-Draft, draft-ietf-tls-svcb-ech-02,
-              23 May 2024, <https://datatracker.ietf.org/doc/html/draft-
-              ietf-tls-svcb-ech-02>.
+              in Progress, Internet-Draft, draft-ietf-tls-svcb-ech-03,
+              23 July 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-tls-svcb-ech-03>.
 
 13.2.  Informative References
 
