@@ -26,21 +26,21 @@ of these include:
 The HAPPIE working group will deliver an updated version of the Happy Eyeballs 
 algorithm that incorporates changes to account for these protocol developments.
 The algorithm will focus on realistic network scenarios and should be guided by
-performance data measured in actual deployed networks. Although the algorithm
-needs to be applicable generically, platform-specific or deployment-specific
+performance data measured in deployed networks. Although the algorithm
+needs to be generally applicable, platform-specific or deployment-specific
 considerations should be documented to help guide implementers. The algorithm
-should be described in a way that it has tunable input values that can reflect
+should have tunable input values that can reflect
 the preferences of a client implementation; defaults for these input values
-can be based on what the working group agrees ought to be the standard behavior
+can be based on working group consensus for standard behavior
 (such as preferring IPv6 connections, preferring faster establishment times,
 etc.), but allow for variation.
 
 The working group will also document the impact of the Happy Eyeballs algorithm
-on the detection of misconfigured deployments, and may provide recommendations on
+on the detection of misconfigured deployments and may provide recommendations on
 how to report such cases that might otherwise be hidden due to automatic switching
 from one technology to another. Any recommended reporting mechanisms need to
 preserve user privacy, allow for accurate detection of broken deployments,
-and lead to some actionable result.
+and produce reports that are actionable.
 
 The working group will focus on a connection establishment algorithm that
 runs on clients. The algorithm takes as input a fully-qualified domain name
