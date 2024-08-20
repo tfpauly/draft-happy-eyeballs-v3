@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-08-18T00:23:24.923363+00:00",
+  "timestamp": "2024-08-20T00:21:20.823546+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -3242,6 +3242,69 @@
           "createdAt": "2024-07-19T00:06:11Z",
           "updatedAt": "2024-07-19T00:06:11Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 53,
+      "id": "PR_kwDOKH7CuM54wdiz",
+      "title": "Charter updates based on side meeting",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/53",
+      "state": "OPEN",
+      "author": "tfpauly",
+      "authorAssociation": "OWNER",
+      "assignees": [
+        "tfpauly"
+      ],
+      "labels": [
+        "charter"
+      ],
+      "body": "",
+      "createdAt": "2024-08-19T16:31:30Z",
+      "updatedAt": "2024-08-19T18:13:39Z",
+      "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
+      "baseRefName": "main",
+      "baseRefOid": "65673daf11b65ff179d76fd5c52441cfd7315f22",
+      "headRepository": "tfpauly/draft-happy-eyeballs-v3",
+      "headRefName": "tfpauly-patch-3",
+      "headRefOid": "daf186622c1a019fc68aa1a7aeca3d6d77759d2a",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKH7CuM6F4cNx",
+          "commit": {
+            "abbreviatedOid": "daf1866"
+          },
+          "author": "DavidSchinazi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Overall LGTM. Minor changes inline",
+          "createdAt": "2024-08-19T18:08:43Z",
+          "updatedAt": "2024-08-19T18:13:39Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "I personally prefer HAPPY (because it's less silly) but won't object if you feel strongly",
+              "createdAt": "2024-08-19T18:08:44Z",
+              "updatedAt": "2024-08-19T18:13:39Z"
+            },
+            {
+              "originalPosition": 40,
+              "body": "\"actual deployed\" sounds weird to me. \"actually deployed\" would be better, but honestly deployed is sufficiently clear - all deployed networks are actual networks\r\n\r\n```suggestion\r\nperformance data measured in deployed networks. Although the algorithm\r\n```",
+              "createdAt": "2024-08-19T18:11:11Z",
+              "updatedAt": "2024-08-19T18:13:39Z"
+            },
+            {
+              "originalPosition": 54,
+              "body": "```suggestion\r\nand produce reports that are actionable.\r\n```",
+              "createdAt": "2024-08-19T18:13:18Z",
+              "updatedAt": "2024-08-19T18:13:39Z"
+            }
+          ]
         }
       ]
     }
