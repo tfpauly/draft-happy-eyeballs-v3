@@ -23,7 +23,7 @@ of these include:
   security properties.
 - Increased deployment and refinement of IPv6-only and IPv6-mostly networks.
 
-The HAPPIE working group will deliver an updated version of the Happy Eyeballs 
+The HAPPY working group will deliver an updated version of the Happy Eyeballs 
 algorithm that incorporates changes to account for these protocol developments.
 The algorithm will focus on realistic network scenarios and should be guided by
 performance data measured in deployed networks. Although the algorithm
