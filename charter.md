@@ -1,4 +1,4 @@
-## HAPPIE WG (Heuristics and Algorithms to Prioritize Protocol Initiation and Establishment)
+## HAPPY WG (Heuristics and Algorithms to Prioritize Protocol deploYment)
 
 RFC 8305 defined “Happy Eyeballs Version 2”, which described a client algorithm 
 for asynchronous resolution of and connection attempts to different server IP 
@@ -52,7 +52,7 @@ working group deliverables.
 
 The rationale for having a working group for this work, instead of hosting it in
 V6OPS, is the increased cross-functional nature of the algorithm. As such, the 
-HAPPIE working group will review its work with groups such as V6OPS, TSVWG, QUIC, 
+HAPPY working group will review its work with groups such as V6OPS, TSVWG, QUIC, 
 HTTPBIS, DNSOP, and TLS.
 
 The working group’s core deliverables are:
