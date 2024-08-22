@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-08-20T00:21:20.823546+00:00",
+  "timestamp": "2024-08-22T00:21:29.342895+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -835,7 +835,7 @@
       "id": "I_kwDOKH7CuM6GQLdz",
       "title": "one liner to emphasis how TLS Encrypted Client Hello impacts",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/47",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "zaheduzzaman",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -844,8 +844,8 @@
       ],
       "body": "https://github.com/tfpauly/draft-happy-eyeballs-v3/blob/757ed4e8c5482ca93379bb20b8c4a948855c2543/charter.md?plain=1#L20\r\n\r\nWe should have one line recording the impact on current deployment. why does it matter??",
       "createdAt": "2024-04-19T08:19:43Z",
-      "updatedAt": "2024-07-12T22:19:25Z",
-      "closedAt": null,
+      "updatedAt": "2024-08-20T15:51:01Z",
+      "closedAt": "2024-08-20T15:51:01Z",
       "comments": [
         {
           "author": "ekinnear",
@@ -853,6 +853,13 @@
           "body": "Assuming that this is a question about why Happy Eyeballs would apply to ECH at all, can add some text to indicate that there may be cases where some candidate endpoints will have ECH keys available and some candidates may not have those keys available, and that should influence policy when racing between candidates.",
           "createdAt": "2024-04-23T22:51:18Z",
           "updatedAt": "2024-04-23T23:00:00Z"
+        },
+        {
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "body": "Addressed by #53 ",
+          "createdAt": "2024-08-20T15:51:01Z",
+          "updatedAt": "2024-08-20T15:51:01Z"
         }
       ]
     },
@@ -3250,7 +3257,7 @@
       "id": "PR_kwDOKH7CuM54wdiz",
       "title": "Charter updates based on side meeting",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/53",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "tfpauly",
       "authorAssociation": "OWNER",
       "assignees": [
@@ -3261,17 +3268,19 @@
       ],
       "body": "",
       "createdAt": "2024-08-19T16:31:30Z",
-      "updatedAt": "2024-08-19T18:13:39Z",
+      "updatedAt": "2024-08-20T15:50:47Z",
       "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
       "baseRefName": "main",
       "baseRefOid": "65673daf11b65ff179d76fd5c52441cfd7315f22",
       "headRepository": "tfpauly/draft-happy-eyeballs-v3",
       "headRefName": "tfpauly-patch-3",
-      "headRefOid": "daf186622c1a019fc68aa1a7aeca3d6d77759d2a",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "d457af0c96d3559a452e5e4c7ba371c98a37f0a6",
+      "closedAt": "2024-08-20T15:50:47Z",
+      "mergedAt": "2024-08-20T15:50:47Z",
+      "mergedBy": "tfpauly",
+      "mergeCommit": {
+        "oid": "a4806cff75278d62d9132e07e1d3942260a566cd"
+      },
       "comments": [],
       "reviews": [
         {
@@ -3303,6 +3312,156 @@
               "body": "```suggestion\r\nand produce reports that are actionable.\r\n```",
               "createdAt": "2024-08-19T18:13:18Z",
               "updatedAt": "2024-08-19T18:13:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6F6nuu",
+          "commit": {
+            "abbreviatedOid": "daf1866"
+          },
+          "author": "nidhijaju",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Mostly lgtm, just a few comments/questions",
+          "createdAt": "2024-08-20T00:04:55Z",
+          "updatedAt": "2024-08-20T04:53:48Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "+1",
+              "createdAt": "2024-08-20T00:04:55Z",
+              "updatedAt": "2024-08-20T04:53:48Z"
+            },
+            {
+              "originalPosition": 41,
+              "body": "No strong opinion, but I feel like \"generally applicable\" reads better\r\n```suggestion\r\nneeds to be generally applicable, platform-specific or deployment-specific\r\n```",
+              "createdAt": "2024-08-20T04:42:40Z",
+              "updatedAt": "2024-08-20T04:53:48Z"
+            },
+            {
+              "originalPosition": 43,
+              "body": "Maybe we don't need the words in the middle?\r\n```suggestion\r\nshould have tunable input values that can reflect\r\n```",
+              "createdAt": "2024-08-20T04:44:04Z",
+              "updatedAt": "2024-08-20T04:53:48Z"
+            },
+            {
+              "originalPosition": 45,
+              "body": "optional nit:\r\n```suggestion\r\ncan be based on working group consensus for standard behavior\r\n```",
+              "createdAt": "2024-08-20T04:46:48Z",
+              "updatedAt": "2024-08-20T04:53:48Z"
+            },
+            {
+              "originalPosition": 74,
+              "body": "Maybe I missed something, but I thought we agreed to have a wiki page or something to document this information (i.e. the previous deliverable)?",
+              "createdAt": "2024-08-20T04:48:38Z",
+              "updatedAt": "2024-08-20T04:53:48Z"
+            },
+            {
+              "originalPosition": 50,
+              "body": "nit:\r\n```suggestion\r\non the detection of misconfigured deployments and may provide recommendations on\r\n```",
+              "createdAt": "2024-08-20T04:49:27Z",
+              "updatedAt": "2024-08-20T04:53:48Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6GA5az",
+          "commit": {
+            "abbreviatedOid": "daf1866"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-20T15:42:46Z",
+          "updatedAt": "2024-08-20T15:42:46Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "Okay, I can revert that",
+              "createdAt": "2024-08-20T15:42:46Z",
+              "updatedAt": "2024-08-20T15:42:46Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6GA52l",
+          "commit": {
+            "abbreviatedOid": "d8919d5"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-20T15:43:32Z",
+          "updatedAt": "2024-08-20T15:43:32Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "```suggestion\r\n## HAPPY WG (Heuristics and Algorithms to Prioritize Protocol deploYment)\r\n```",
+              "createdAt": "2024-08-20T15:43:32Z",
+              "updatedAt": "2024-08-20T15:43:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6GA59x",
+          "commit": {
+            "abbreviatedOid": "d8919d5"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-20T15:43:43Z",
+          "updatedAt": "2024-08-20T15:43:43Z",
+          "comments": [
+            {
+              "originalPosition": 31,
+              "body": "```suggestion\r\nThe HAPPY working group will deliver an updated version of the Happy Eyeballs \r\n```",
+              "createdAt": "2024-08-20T15:43:43Z",
+              "updatedAt": "2024-08-20T15:43:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6GA6CO",
+          "commit": {
+            "abbreviatedOid": "d8919d5"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-20T15:43:50Z",
+          "updatedAt": "2024-08-20T15:43:50Z",
+          "comments": [
+            {
+              "originalPosition": 63,
+              "body": "```suggestion\r\nHAPPY working group will review its work with groups such as V6OPS, TSVWG, QUIC, \r\n```",
+              "createdAt": "2024-08-20T15:43:50Z",
+              "updatedAt": "2024-08-20T15:43:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6GA6mc",
+          "commit": {
+            "abbreviatedOid": "d457af0"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-08-20T15:44:46Z",
+          "updatedAt": "2024-08-20T15:44:46Z",
+          "comments": [
+            {
+              "originalPosition": 74,
+              "body": "I view the previous bullet as \"the measurements that back up the algorithm\", and this one as \"reporting brokenness\"",
+              "createdAt": "2024-08-20T15:44:46Z",
+              "updatedAt": "2024-08-20T15:44:46Z"
             }
           ]
         }
