@@ -3,8 +3,8 @@
 RFC 8305 defined “Happy Eyeballs Version 2”, which described a client algorithm 
 for asynchronous resolution of and connection attempts to different server IP 
 address options, aiming to improve IPv6 usage without degrading connection
-establishment success rates due to misconfigured networks or servers. The
-algorithm focused specifically on optimizing TCP connection establishment.
+establishment success rates due to misconfigured networks, clients, or servers.
+The algorithm focused specifically on optimizing TCP connection establishment.
 The name “happy eyeballs” itself refers to how a user’s eyeballs are happier
 when content loads more quickly because they don’t need to wait for timeouts
 due to misconfigured deployments.
