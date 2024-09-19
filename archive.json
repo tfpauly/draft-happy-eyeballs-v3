@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-09-17T00:19:20.259116+00:00",
+  "timestamp": "2024-09-19T00:23:12.533474+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -3540,24 +3540,28 @@
       "id": "PR_kwDOKH7CuM55sNgd",
       "title": "A nit: HE helps misconfigured clients too, not just networks or servers",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/55",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "furry13",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "charter"
+      ],
       "body": "",
       "createdAt": "2024-08-28T10:40:06Z",
-      "updatedAt": "2024-08-28T23:31:54Z",
+      "updatedAt": "2024-09-17T15:09:17Z",
       "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
       "baseRefName": "main",
       "baseRefOid": "de7541e063cc3f875e2aabc2750a8f9edffd7adf",
       "headRepository": "furry13/draft-happy-eyeballs-v3",
       "headRefName": "nit-aug2024",
       "headRefOid": "432c683565f637b23379f893be231ec4006e2946",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-09-17T15:09:16Z",
+      "mergedAt": "2024-09-17T15:09:16Z",
+      "mergedBy": "tfpauly",
+      "mergeCommit": {
+        "oid": "88d1d2c4e2248b803d3ce3fcfbbd77a81d4405ba"
+      },
       "comments": [],
       "reviews": [
         {
@@ -3597,6 +3601,19 @@
           "body": "",
           "createdAt": "2024-08-28T23:31:54Z",
           "updatedAt": "2024-08-28T23:31:54Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6JsK57",
+          "commit": {
+            "abbreviatedOid": "432c683"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-09-17T15:09:08Z",
+          "updatedAt": "2024-09-17T15:09:08Z",
           "comments": []
         }
       ]
