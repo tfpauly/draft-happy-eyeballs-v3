@@ -26,14 +26,18 @@ of these include:
 The HAPPY working group will deliver an updated version of the Happy Eyeballs 
 algorithm that incorporates changes to account for these protocol developments.
 The algorithm will focus on realistic network scenarios and should be guided by
-performance data measured in deployed networks. Although the algorithm
-needs to be generally applicable, platform-specific or deployment-specific
-considerations should be documented to help guide implementers. The algorithm
-should have tunable input values that can reflect
-the preferences of a client implementation; defaults for these input values
-can be based on working group consensus for standard behavior
-(such as preferring IPv6 connections, preferring faster establishment times,
-etc.), but allow for variation.
+performance data measured in deployed networks. Although the algorithm needs to
+be generally applicable, platform-specific or deployment-specific considerations
+should be documented to help guide implementers. The algorithm should have
+tunable input values that can reflect the preferences of a client
+implementation; defaults for these input values can be based on working group
+consensus for standard behavior (such as preferring IPv6 connections, preferring
+faster establishment times, etc.), but allow for variation.
+
+There have been a number of places where similar Happy Eyeballs-like racing
+strategies have been specified, including in RFC 9132. An inventory of such
+Happy Eyeballs-related use cases and a survey of other applications of similar
+concepts are also in scope.
 
 The working group will also document the impact of the Happy Eyeballs algorithm
 on the detection of misconfigured deployments and may provide recommendations on
