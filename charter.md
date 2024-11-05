@@ -34,10 +34,10 @@ implementation; defaults for these input values can be based on working group
 consensus for standard behavior (such as preferring IPv6 connections, preferring
 faster establishment times, etc.), but allow for variation.
 
-There have been a number of places where similar Happy Eyeballs-like racing
+There have been a number of documents in which similar Happy Eyeballs-like racing
 strategies have been specified, including in RFC 9132. An inventory of such
 Happy Eyeballs-related use cases and a survey of other applications of similar
-concepts are also in scope.
+concepts are also in scope, which can be included as part of the Happy Eyeballs Version 3 main deliverable.
 
 The working group will also document the impact of the Happy Eyeballs algorithm
 on the detection of misconfigured deployments and may provide recommendations on
