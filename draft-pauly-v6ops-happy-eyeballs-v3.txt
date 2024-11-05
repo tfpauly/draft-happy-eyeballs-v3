@@ -5,10 +5,10 @@
 Network Working Group                                           T. Pauly
 Internet-Draft                                                 Apple Inc
 Intended status: Informational                               D. Schinazi
-Expires: 21 March 2025                                           N. Jaju
+Expires: 9 May 2025                                              N. Jaju
                                                             K. Ishibashi
                                                               Google LLC
-                                                       17 September 2024
+                                                         5 November 2024
 
 
     Happy Eyeballs Version 3: Better Connectivity Using Concurrency
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 March 2025.
+   This Internet-Draft will expire on 9 May 2025.
 
 Copyright Notice
 
@@ -749,9 +749,9 @@ Table of Contents
 
    [SVCB-ECH] Schwartz, B. M., Bishop, M., and E. Nygren, "Bootstrapping
               TLS Encrypted ClientHello with DNS Service Bindings", Work
-              in Progress, Internet-Draft, draft-ietf-tls-svcb-ech-05, 3
-              September 2024, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-tls-svcb-ech-05>.
+              in Progress, Internet-Draft, draft-ietf-tls-svcb-ech-06,
+              21 October 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-tls-svcb-ech-06>.
 
 13.2.  Informative References
 
