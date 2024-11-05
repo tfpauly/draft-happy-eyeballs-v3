@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-03T00:26:46.150100+00:00",
+  "timestamp": "2024-11-05T00:24:02.088222+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -890,10 +890,12 @@
       "author": "boucadair",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "charter"
+      ],
       "body": "Some HE variants were specified out there as well. It would be great to inventory those and see if they can be naturally addressed by HEv3. \r\n\r\nSee an example of such uses at https://datatracker.ietf.org/doc/html/rfc9132#name-happy-eyeballs-for-dots-sig. That variant was specified with the following in mind:\r\n\r\n> Such a procedure is needed to avoid experiencing long connection delays. For example, if an IPv4 path to a DOTS server is functional, but the DOTS server's IPv6 path is nonfunctional, a dual-stack DOTS client may experience a significant connection delay compared to an IPv4-only DOTS client in the same network conditions. The other problem is that if a middlebox between the DOTS client and DOTS server is configured to block UDP traffic, the DOTS client will fail to establish a DTLS association with the DOTS server; consequently, it will have to fall back to TLS over TCP, thereby incurring significant connection delays.\r\n\r\nPlease refer to the RFC for more details, including deviations vs [RFC8305](https://datatracker.ietf.org/doc/html/rfc8305).\r\n\r\nI suggest to a add a charter item to inventory such uses.\r\n",
       "createdAt": "2024-07-18T12:14:53Z",
-      "updatedAt": "2024-07-21T02:09:40Z",
+      "updatedAt": "2024-11-04T16:59:54Z",
       "closedAt": null,
       "comments": [
         {
@@ -910,7 +912,7 @@
       "id": "I_kwDOKH7CuM6RAi9X",
       "title": "WG name bikeshed",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/52",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "tfpauly",
       "authorAssociation": "OWNER",
       "assignees": [],
@@ -919,8 +921,8 @@
       ],
       "body": "Heuristics and Algorithms to Prioritize Protocol deploYment (HAPPY)\r\nHeuristics and Algorithms to Prioritize Protocol Initiation (HAPPI)\r\nHeuristics and Algorithms to Prioritize Protocol Initiation or Establishment (HAPPIE)\r\n",
       "createdAt": "2024-07-26T19:21:16Z",
-      "updatedAt": "2024-07-30T16:48:13Z",
-      "closedAt": null,
+      "updatedAt": "2024-11-04T16:23:04Z",
+      "closedAt": "2024-11-04T16:23:03Z",
       "comments": [
         {
           "author": "ekinnear",
@@ -935,6 +937,13 @@
           "body": "+1 to @ekinnear",
           "createdAt": "2024-07-30T16:48:12Z",
           "updatedAt": "2024-07-30T16:48:12Z"
+        },
+        {
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "body": "The current version uses HAPPY, keeping that. ",
+          "createdAt": "2024-11-04T16:23:03Z",
+          "updatedAt": "2024-11-04T16:23:03Z"
         }
       ]
     }
