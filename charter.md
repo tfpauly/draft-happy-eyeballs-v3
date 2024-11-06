@@ -35,7 +35,7 @@ consensus for standard behavior (such as preferring IPv6 connections, preferring
 faster establishment times, etc.), but allow for variation.
 
 There have been a number of documents in which similar Happy Eyeballs-like racing
-strategies have been specified, including in RFC 9132 Section 4.3. An inventory
+strategies have been specified, including in Section 4.3 of RFC 9132. An inventory
 of such Happy Eyeballs-related use cases and a survey of other applications of
 similar concepts are also in scope, which can be included as part of the Happy
 Eyeballs Version 3 main deliverable.
