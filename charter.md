@@ -9,7 +9,7 @@ The name “happy eyeballs” itself refers to how a user’s eyeballs are happi
 when content loads more quickly because they don’t need to wait for timeouts
 due to misconfigured deployments.
 
-Since the publication of RFC 8305, several changes to common protocols and 
+Since the publication of RFC 8305, several changes to common protocols, clients, and 
 server deployments have occurred that require a revision of the algorithm. Some 
 of these include:
 
