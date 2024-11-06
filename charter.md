@@ -41,10 +41,11 @@ concepts are also in scope, which can be included as part of the Happy Eyeballs
 Version 3 main deliverable.
 
 The working group will also document the impact of the Happy Eyeballs algorithm
-on the detection of misconfigured deployments and may provide recommendations on
-how to report such cases that might otherwise be hidden due to automatic switching
-from one technology to another. Any recommended reporting mechanisms need to
-preserve user privacy, allow for accurate detection of broken deployments,
+on the detection of misconfigured deployments, such as networks with configured,
+but non-functional, IPv6 connectivity. It may provide recommendations for methods
+or define protocols to report such cases that might otherwise be hidden due to 
+automatic switching from one technology to another. Any reporting mechanisms
+need to preserve user privacy, allow for accurate detection of broken deployments,
 and produce reports that are actionable.
 
 The working group will focus on a connection establishment algorithm that
