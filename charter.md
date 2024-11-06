@@ -63,9 +63,6 @@ HTTPBIS, DNSOP, and TLS.
 The working group’s core deliverables are:
 
 - Developing a standards-track document for Happy Eyeballs Version 3
-- Measuring the effectiveness of the algorithm during development. This effort
-  does not necessarily need to lead to a published document, but should be
-  captured in presentations, working group wikis, etc.
 - Producing a document that explains the impact of Happy Eyeballs on
   detecting and measuring broken deployments, with recommendations on
   how to report errors in a privacy-preserving, accurate, and actionable way.
