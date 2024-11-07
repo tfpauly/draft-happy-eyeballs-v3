@@ -9,7 +9,7 @@ The name “happy eyeballs” itself refers to how a user’s eyeballs are happi
 when content loads more quickly because they don’t need to wait for timeouts
 due to misconfigured deployments.
 
-Since the publication of RFC 8305, several changes to common protocols and 
+Since the publication of RFC 8305, several changes to common protocols, clients, and 
 server deployments have occurred that require a revision of the algorithm. Some 
 of these include:
 
@@ -63,6 +63,6 @@ HTTPBIS, DNSOP, and TLS.
 The working group’s core deliverables are:
 
 - Developing a standards-track document for Happy Eyeballs Version 3
-- Producing a document that explains the impact of Happy Eyeballs on
-  detecting and measuring broken deployments, with recommendations on
-  how to report errors in a privacy-preserving, accurate, and actionable way.
+- Producing an informational document that explains the impact of Happy Eyeballs
+  on detecting and measuring broken deployments, with recommendations on how to
+  report errors in a privacy-preserving, accurate, and actionable way.
