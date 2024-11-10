@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-07T00:24:03.386851+00:00",
+  "timestamp": "2024-11-10T00:26:06.649292+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -952,7 +952,7 @@
       "id": "I_kwDOKH7CuM6dNnEP",
       "title": "What is the target type of that document?",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/58",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "zaheduzzaman",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -961,8 +961,8 @@
       ],
       "body": "https://github.com/tfpauly/draft-happy-eyeballs-v3/blob/de5d6e4f75451f1f89847487792708d7153629fb/charter.md?plain=1#L69\r\n\r\nAre we aiming informational or standard track document? Please specify in the deliverables.  ",
       "createdAt": "2024-11-06T10:00:46Z",
-      "updatedAt": "2024-11-06T13:51:14Z",
-      "closedAt": null,
+      "updatedAt": "2024-11-07T09:53:21Z",
+      "closedAt": "2024-11-07T09:53:21Z",
       "comments": [
         {
           "author": "ekinnear",
@@ -992,7 +992,7 @@
       "id": "I_kwDOKH7CuM6dNsw4",
       "title": "Documenting effectiveness as part of main deliverable",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/59",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "zaheduzzaman",
       "authorAssociation": "NONE",
       "assignees": [],
@@ -1001,8 +1001,8 @@
       ],
       "body": "https://github.com/tfpauly/draft-happy-eyeballs-v3/blob/de5d6e4f75451f1f89847487792708d7153629fb/charter.md?plain=1#L66-L68\r\n\r\nI would suggest that we move this part in the body of the charter and as a process to report on effectiveness of one algorithm or different approaches in wg presentations. This would be a means to decide on the algorithm as a part of main deliverable. ",
       "createdAt": "2024-11-06T10:10:48Z",
-      "updatedAt": "2024-11-06T11:07:34Z",
-      "closedAt": null,
+      "updatedAt": "2024-11-07T09:54:43Z",
+      "closedAt": "2024-11-07T09:54:43Z",
       "comments": [
         {
           "author": "nidhijaju",
@@ -1025,7 +1025,7 @@
       "id": "I_kwDOKH7CuM6dOP5n",
       "title": "Reference to RFC9132",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/61",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "nidhijaju",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -1034,8 +1034,8 @@
       ],
       "body": "From Jen Linkova on the [mailing list](https://mailarchive.ietf.org/arch/msg/happy/D6NCz9GJd_B-4NlXpDeT1r4aPrE/):\r\n> The charter mentions RFC9132, which defines DOTS signal channel.\r\nI'm not sure I fully understand how it is related. If the RFC number\r\nis not a typo, maybe we shall clarify the text?",
       "createdAt": "2024-11-06T10:59:52Z",
-      "updatedAt": "2024-11-06T16:03:04Z",
-      "closedAt": null,
+      "updatedAt": "2024-11-07T09:55:16Z",
+      "closedAt": "2024-11-07T09:55:16Z",
       "comments": [
         {
           "author": "nidhijaju",
@@ -1060,7 +1060,7 @@
       ],
       "body": "From Jen Linkova on the [mailing list](https://mailarchive.ietf.org/arch/msg/happy/D6NCz9GJd_B-4NlXpDeT1r4aPrE/):\r\n\r\n> The charter says \"The algorithm takes as input a fully-qualified\r\ndomain name (FQDN), and results in a single established connection to\r\na single server IP address on a single network. While the algorithm\r\ncould apply to scenarios with multiple networks to choose between or\r\nto use simultaneously, or could deal with pools of multiple\r\nconnections, such scenarios are out of scope for the working group\r\ndeliverables.\"\r\n>\r\n> IMHO \" multiple networks to choose between\"  needs clarifying. Does\r\nmultihoming, especially \"multi-prefix, multi-router single-link\"\r\ntopology or mPVD scenario are in scope?",
       "createdAt": "2024-11-06T11:02:45Z",
-      "updatedAt": "2024-11-06T17:57:45Z",
+      "updatedAt": "2024-11-07T07:16:19Z",
       "closedAt": null,
       "comments": [
         {
@@ -1069,6 +1069,13 @@
           "body": "@furry13 would \"multiple network attachments\" be any better? I think the intent is to cover all of the examples you gave, in the sense that what we'd be writing down is specific to multiple attempts originating a single source IP address.",
           "createdAt": "2024-11-06T17:57:43Z",
           "updatedAt": "2024-11-06T17:57:43Z"
+        },
+        {
+          "author": "furry13",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": ">would \"multiple network attachments\" be any better? \r\n\r\nThank you Eric, I think it's definitely more clear and specify that multi-interface multihoming is out of scope, but a single interface multihoming is I guess that would mean that something might to be said in the draft about DNS resolution - like it's performed over the same interface? or do we ignore DNS split horizon? anyway, it's another issue). I'll send a PR for this one.",
+          "createdAt": "2024-11-07T07:16:19Z",
+          "updatedAt": "2024-11-07T07:16:19Z"
         }
       ]
     },
@@ -1077,7 +1084,7 @@
       "id": "I_kwDOKH7CuM6dOTUu",
       "title": "Better error reporting wording and deliverable",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/63",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "nidhijaju",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -1086,8 +1093,8 @@
       ],
       "body": "From Jordi Palet on the [mailing list](https://mailarchive.ietf.org/arch/msg/happy/p9Y1EfNh_RXG-56YnCyV46I6RDE/):\r\n\r\n> I think in the chapter we should have a better working for the error reporting.\r\n>\r\n> We have now:\r\n>\r\n>The working group will also document the impact of the Happy Eyeballs algorithm on the detection of misconfigured deployments and may provide recommendations on how to report such cases that might otherwise be hidden due to automatic switching from one technology to another. Any recommended reporting mechanisms need to preserve user privacy, allow for accurate detection of broken deployments, and produce reports that are actionable.\r\n>\r\n>May be instead:\r\n>\r\n>The working group will also document the impact of the Happy Eyeballs algorithm on the detection of misconfigured deployments, errors that force the fall-back to legacy protocols (such as, for example, IPv4) and statistics. It will also provide specific protocols on how to report such fall-back cases, errors and statistics that might otherwise be hidden due to automatic switching from one technology to another. Any reporting mechanisms need to preserve user privacy, allow for accurate detection of broken deployments and errors, and produce reports that are actionable.\r\n>\r\n>Also, we may need to add a deliverable for that, something like:\r\n>\r\n>* Producing a document that specify the protocol used for the error and statistics reporting.",
       "createdAt": "2024-11-06T11:06:38Z",
-      "updatedAt": "2024-11-06T17:37:42Z",
-      "closedAt": null,
+      "updatedAt": "2024-11-07T09:57:29Z",
+      "closedAt": "2024-11-07T09:57:29Z",
       "comments": [
         {
           "author": "ekinnear",
@@ -3952,7 +3959,7 @@
       "id": "PR_kwDOKH7CuM6BCQSE",
       "title": "Clarify target type of reporting errors document",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/60",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "nidhijaju",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -3961,17 +3968,19 @@
       ],
       "body": "Fixes #58.",
       "createdAt": "2024-11-06T10:29:20Z",
-      "updatedAt": "2024-11-06T14:21:40Z",
+      "updatedAt": "2024-11-07T09:53:20Z",
       "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
       "baseRefName": "main",
       "baseRefOid": "de5d6e4f75451f1f89847487792708d7153629fb",
       "headRepository": "nidhijaju/draft-happy-eyeballs-v3",
       "headRefName": "impact-document-type",
       "headRefOid": "abb3e77f7fa597d569c392c968af53b3e0865dc0",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-11-07T09:53:20Z",
+      "mergedAt": "2024-11-07T09:53:20Z",
+      "mergedBy": "tfpauly",
+      "mergeCommit": {
+        "oid": "157ba865376d01fd74ab1d2e972f312175f0a842"
+      },
       "comments": [
         {
           "author": "bashi",
@@ -4020,6 +4029,19 @@
           "createdAt": "2024-11-06T14:21:39Z",
           "updatedAt": "2024-11-06T14:21:39Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6QRVWK",
+          "commit": {
+            "abbreviatedOid": "abb3e77"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-11-07T09:52:43Z",
+          "updatedAt": "2024-11-07T09:52:43Z",
+          "comments": []
         }
       ]
     },
@@ -4028,7 +4050,7 @@
       "id": "PR_kwDOKH7CuM6BEhUm",
       "title": "Remove deliverable for documenting effectiveness",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/65",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "nidhijaju",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -4037,17 +4059,19 @@
       ],
       "body": "Fixes https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/59.",
       "createdAt": "2024-11-06T15:15:58Z",
-      "updatedAt": "2024-11-06T17:24:40Z",
+      "updatedAt": "2024-11-07T09:54:43Z",
       "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
       "baseRefName": "main",
-      "baseRefOid": "de5d6e4f75451f1f89847487792708d7153629fb",
+      "baseRefOid": "157ba865376d01fd74ab1d2e972f312175f0a842",
       "headRepository": "nidhijaju/draft-happy-eyeballs-v3",
       "headRefName": "move-effectiveness-text",
-      "headRefOid": "4f4a418f7a52a5c73a5175beaa972db38e029312",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "4ef211e123c78a9bdb486c1c8992b14a00487cb4",
+      "closedAt": "2024-11-07T09:54:42Z",
+      "mergedAt": "2024-11-07T09:54:42Z",
+      "mergedBy": "tfpauly",
+      "mergeCommit": {
+        "oid": "50dce53b91922f38a9c8e4299641d6e3cdfb2e6c"
+      },
       "comments": [],
       "reviews": [
         {
@@ -4075,6 +4099,19 @@
           "createdAt": "2024-11-06T17:24:40Z",
           "updatedAt": "2024-11-06T17:24:40Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6QRWyr",
+          "commit": {
+            "abbreviatedOid": "4ef211e"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-11-07T09:54:24Z",
+          "updatedAt": "2024-11-07T09:54:24Z",
+          "comments": []
         }
       ]
     },
@@ -4083,7 +4120,7 @@
       "id": "PR_kwDOKH7CuM6BE9Ui",
       "title": "Specify section 4.3 for RFC 9132 reference",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/66",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "nidhijaju",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -4092,17 +4129,19 @@
       ],
       "body": "Fixes https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/61.",
       "createdAt": "2024-11-06T16:03:44Z",
-      "updatedAt": "2024-11-06T17:29:53Z",
+      "updatedAt": "2024-11-07T09:55:16Z",
       "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
       "baseRefName": "main",
       "baseRefOid": "de5d6e4f75451f1f89847487792708d7153629fb",
       "headRepository": "nidhijaju/draft-happy-eyeballs-v3",
       "headRefName": "clarify-rfc9132",
       "headRefOid": "c7fa509909d7a94d8c89281fa683c43eb54d4407",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-11-07T09:55:15Z",
+      "mergedAt": "2024-11-07T09:55:15Z",
+      "mergedBy": "tfpauly",
+      "mergeCommit": {
+        "oid": "633625d2a5c120e176188d9353780c105771fb63"
+      },
       "comments": [],
       "reviews": [
         {
@@ -4124,6 +4163,19 @@
               "updatedAt": "2024-11-06T17:26:12Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6QRXNU",
+          "commit": {
+            "abbreviatedOid": "c7fa509"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-11-07T09:55:08Z",
+          "updatedAt": "2024-11-07T09:55:08Z",
+          "comments": []
         }
       ]
     },
@@ -4132,26 +4184,51 @@
       "id": "PR_kwDOKH7CuM6BFwSU",
       "title": "Expand on error reporting section in the charter.",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/67",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "ekinnear",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "charter"
+      ],
       "body": "Expand on error reporting section in the charter.\n\nFixes #63",
       "createdAt": "2024-11-06T17:48:39Z",
-      "updatedAt": "2024-11-06T17:48:40Z",
+      "updatedAt": "2024-11-07T16:47:18Z",
       "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
       "baseRefName": "main",
       "baseRefOid": "801290ed0f4eef3fda72d055ffa958ff9a915068",
       "headRepository": "ekinnear/draft-happy-eyeballs-v3",
       "headRefName": "ek/charter_error_reporting",
-      "headRefOid": "0251ea6b161007f1e570122cf4eec9a063a7abc7",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "268c59b5b2ba483d0a2b450ec8dc6a54fbf1f76f",
+      "closedAt": "2024-11-07T09:57:28Z",
+      "mergedAt": "2024-11-07T09:57:28Z",
+      "mergedBy": "tfpauly",
+      "mergeCommit": {
+        "oid": "f8685eac684f5a76fdec41f725061a1785757860"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKH7CuM6QRYBZ",
+          "commit": {
+            "abbreviatedOid": "0251ea6"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-11-07T09:56:33Z",
+          "updatedAt": "2024-11-07T09:56:40Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "```suggestion\r\non the detection of misconfigured deployments, such as networks with configured\r\n(but non-functional) IPv6 connectivity. It may provide recommendations for methods\r\n```",
+              "createdAt": "2024-11-07T09:56:33Z",
+              "updatedAt": "2024-11-07T09:56:40Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 68,
@@ -4162,10 +4239,12 @@
       "author": "ekinnear",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "charter"
+      ],
       "body": "Clarify \"multiple networks to choose between\"\n\nFixes #62",
       "createdAt": "2024-11-06T17:59:15Z",
-      "updatedAt": "2024-11-06T17:59:15Z",
+      "updatedAt": "2024-11-07T09:59:03Z",
       "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
       "baseRefName": "main",
       "baseRefOid": "801290ed0f4eef3fda72d055ffa958ff9a915068",
@@ -4177,7 +4256,21 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKH7CuM6QRZXG",
+          "commit": {
+            "abbreviatedOid": "d0c6733"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "I'm fine with this change, but let's see if it matches what @furry13 is getting at",
+          "createdAt": "2024-11-07T09:58:48Z",
+          "updatedAt": "2024-11-07T09:58:48Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
