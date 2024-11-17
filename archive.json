@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-14T00:24:12.662796+00:00",
+  "timestamp": "2024-11-17T00:27:32.181082+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -1133,7 +1133,7 @@
       "labels": [],
       "body": "The SVCB SvcPriority was designed to guide a simple client that is connecting \"from scratch\", with no further information about the service or the network. In that context, the function of SvcPriority is fairly clear.\r\n\r\nFor clients with a memory of prior connection attempts, the function of SvcPriority is less clear.  If the most preferred endpoint failed recently, can the client skip it the next time?\r\n\r\nAnd what about highly optimized clients that are racing multiple connections?  Can they race connections across multiple SvcPriorities, or should they wait until all the priority 1 endpoints fail?\r\n\r\nEven in the simple case, the definition of \"failure\" is somewhat nebulous.  TCP (and QUIC) connection initiation generally relies on exponential backoff that may not give up until multiple minutes have passed.  Surely we don't want clients to wait 100+ seconds before trying the priority 2 endpoint...\r\n\r\nThese questions are obviously relevant to mobile- and browser-like clients.  They're also increasingly relevant to DNS servers, as the DELEG group is considering SVCB-based definitions of DNS delegation.  DNS resolvers already use complex heuristics to estimate the latency and reliability of each nameserver, in order to select the best one (while still monitoring the others).\r\n\r\n@enygren @mikebishop",
       "createdAt": "2024-11-13T23:16:35Z",
-      "updatedAt": "2024-11-14T00:16:19Z",
+      "updatedAt": "2024-11-15T08:17:54Z",
       "closedAt": null,
       "comments": [
         {
@@ -1142,6 +1142,13 @@
           "body": "I'd be inclined toward similar guidance to the preference Happy Eyeballs currently gives to IPv6 -- give higher preference endpoints a brief head start, then use whichever connection first completes successfully.",
           "createdAt": "2024-11-14T00:16:18Z",
           "updatedAt": "2024-11-14T00:16:18Z"
+        },
+        {
+          "author": "bashi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Another similar complexity may come from the Alt-Svc header and the ALTSVC HTTP/2 frame.",
+          "createdAt": "2024-11-15T08:17:52Z",
+          "updatedAt": "2024-11-15T08:17:52Z"
         }
       ]
     }
