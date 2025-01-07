@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-05T00:26:55.825010+00:00",
+  "timestamp": "2025-01-07T00:25:07.821348+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -1151,6 +1151,22 @@
           "updatedAt": "2024-11-15T08:17:52Z"
         }
       ]
+    },
+    {
+      "number": 70,
+      "id": "I_kwDOKH7CuM6lK4KI",
+      "title": "Handling SVCB RR When TargetName Differs from Hostname",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/70",
+      "state": "OPEN",
+      "author": "KershawChang",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The behavior regarding querying SVCB RRs in section 4 states:\r\n\r\n> If the client receives any positive response back (containing a valid AAAA, A, or SVCB ServiceMode RR), it starts the Resolution Delay timer, which runs until both the AAAA and SVCB ServiceMode responses are received, or a SVCB response is received that includes at least one address in the ipv6hint parameter. Once a SVCB response and at least one IPv6 address have been received, or the timer expires, the client proceeds with sorting addresses and initiating staggered connection attempts.\r\n\r\nIt's unclear to me what a client should do when the `TargetName` in the SVCB RR differs from the original host name. For example, consider the following HTTPS RR:\r\n\r\n```\r\nexample.com. 60 IN HTTPS 1 svc1.example.com. (alpn=\"h3\")\r\n```\r\n\r\nIf the IP address of `svc1.example.com` is different from that of `example.com`, should the client cancel the existing A and AAAA queries to example.com and initiate new A and AAAA queries to `svc1.example.com` instead?\r\nI think the specification should clarify this scenario.\r\n\r\nThanks,\r\nKershaw",
+      "createdAt": "2025-01-06T17:15:33Z",
+      "updatedAt": "2025-01-06T17:15:33Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
