@@ -24,15 +24,16 @@ of these include:
 - Increased deployment and refinement of IPv6-only and IPv6-mostly networks.
 
 The HAPPY working group will deliver an updated version of the Happy Eyeballs 
-algorithm that incorporates changes to account for these protocol developments.
-The algorithm will focus on realistic network scenarios and should be guided by
-performance data measured in deployed networks. Although the algorithm needs to
-be generally applicable, platform-specific or deployment-specific considerations
-should be documented to help guide implementers. The algorithm should have
-tunable input values that can reflect the preferences of a client
-implementation; defaults for these input values can be based on working group
-consensus for standard behavior (such as preferring IPv6 connections, preferring
-faster establishment times, etc.), but allow for variation.
+algorithm, "Happy Eyeballs Version 3", that incorporates changes to account for
+these protocol developments. The working group will focus on realistic network
+scenarios and should be guided by performance data measured in deployed networks.
+Although the algorithm needs to be generally applicable, platform-specific or
+deployment-specific considerations should be included in the core algorithm
+document. The algorithm should have tunable input values that can reflect the
+preferences of a client implementation; defaults for these input values should
+be based on working group consensus for standard behavior (such as preferring
+IPv6 connections, preferring faster establishment times, etc.), but allow for
+variation.
 
 There have been a number of documents in which similar Happy Eyeballs-like racing
 strategies have been specified, including in Section 4.3 of RFC 9132. An inventory
@@ -56,14 +57,17 @@ multiple networks to choose between or to use simultaneously, or could deal
 with pools of multiple connections, such scenarios are out of scope for the
 working group deliverables.
 
-The rationale for having a working group for this work, instead of hosting it in
-V6OPS, is the increased cross-functional nature of the algorithm. As such, the 
-HAPPY working group will review its work with groups such as V6OPS, TSVWG, QUIC, 
-HTTPBIS, DNSOP, and TLS.
+The updated algorithm is expected to have increased cross-functional scope,
+beyond the original versions of the algorithm developed in V6OPS. As such, the 
+HAPPY working group will review its work with groups such as V6OPS, 6MAN, TSVWG,
+QUIC, HTTPBIS, DNSOP, and TLS. The working group should also coordinate with the
+Security Area, specifically around the security considerations for TLS Encrypted
+Client Hello and the behavior of the algorithm with secure protocols (TLS, QUIC,
+etc).
 
 The working group’s core deliverables are:
 
-- Developing a standards-track document for Happy Eyeballs Version 3
-- Producing an informational document that explains the impact of Happy Eyeballs
+- A standards-track document for Happy Eyeballs Version 3
+- An informational document that explains the impact of Happy Eyeballs
   on detecting and measuring broken deployments, with recommendations on how to
   report errors in a privacy-preserving, accurate, and actionable way.
