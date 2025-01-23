@@ -29,12 +29,6 @@ document. The algorithm should have tunable input values that allow for variatio
 between clients, with defaults based on working group consensus for preferred
 behaviors.
 
-There have been a number of documents in which similar Happy Eyeballs-like racing
-strategies have been specified, including in Section 4.3 of RFC 9132. An inventory
-of such Happy Eyeballs-related use cases and a survey of similar algorithms are
-also in scope, which can be included as part of the Happy Eyeballs Version 3
-main deliverable.
-
 The working group will also document the impact of the Happy Eyeballs algorithm
 on the detection of misconfigured deployments, such as networks with configured
 (but non-functional) IPv6 connectivity. This can include recommendations for how
