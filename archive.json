@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-21T00:23:41.805856+00:00",
+  "timestamp": "2025-01-23T00:23:52.694527+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -4331,6 +4331,74 @@
           "body": "I'm fine with this change, but let's see if it matches what @furry13 is getting at",
           "createdAt": "2024-11-07T09:58:48Z",
           "updatedAt": "2024-11-07T09:58:48Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 72,
+      "id": "PR_kwDOKH7CuM6IhWLk",
+      "title": "Charter review from IAB",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/72",
+      "state": "OPEN",
+      "author": "tfpauly",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "charter"
+      ],
+      "body": "Updates based on Matthew Bocci's charter review, for the IAB review",
+      "createdAt": "2025-01-21T16:54:53Z",
+      "updatedAt": "2025-01-22T10:25:52Z",
+      "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
+      "baseRefName": "main",
+      "baseRefOid": "f8685eac684f5a76fdec41f725061a1785757860",
+      "headRepository": "tfpauly/draft-happy-eyeballs-v3",
+      "headRefName": "tfpauly-patch-4",
+      "headRefOid": "b1e602cfc0d1fd5f03f8099d3362b10c978e8cba",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKH7CuM6Y7aGv",
+          "commit": {
+            "abbreviatedOid": "b1e602c"
+          },
+          "author": "DavidSchinazi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-01-21T21:17:22Z",
+          "updatedAt": "2025-01-21T21:17:22Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6Y8hNm",
+          "commit": {
+            "abbreviatedOid": "b1e602c"
+          },
+          "author": "nidhijaju",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-01-22T01:25:38Z",
+          "updatedAt": "2025-01-22T01:25:38Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6Y_kDD",
+          "commit": {
+            "abbreviatedOid": "b1e602c"
+          },
+          "author": "ekinnear",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-01-22T10:25:52Z",
+          "updatedAt": "2025-01-22T10:25:52Z",
           "comments": []
         }
       ]
