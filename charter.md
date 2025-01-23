@@ -36,12 +36,11 @@ to report issues that might otherwise be hidden by the algorithm's automatic
 failover. Any reporting mechanisms need to preserve user privacy,
 accurately detect broken deployments, and produce actionable reports.
 
-The working group will focus on a connection establishment algorithm that
-starts with a fully-qualified domain name (FQDN) and ends with a single
-established connection to a server. While the algorithm may
-apply to scenarios with multiple network links, or pools of multiple
-connections, specific mechanisms for such scenarios are out of scope
-for the working group.
+The Happy Eyeballs Version 3 algorithm will be scoped to connection establishment
+that starts with a fully-qualified domain name (FQDN) and ends with a single
+established connection to a server. While the algorithm may apply to scenarios
+with multiple network links, or pools of multiple connections, specific
+mechanisms for such scenarios are out of scope for the working group.
 
 The updated algorithm is expected to have increased cross-functional scope,
 beyond the original versions of the algorithm developed in V6OPS. The HAPPY
