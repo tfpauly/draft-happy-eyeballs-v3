@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-23T00:23:52.694527+00:00",
+  "timestamp": "2025-01-26T00:24:39.574929+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -4340,7 +4340,7 @@
       "id": "PR_kwDOKH7CuM6IhWLk",
       "title": "Charter review from IAB",
       "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/72",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "tfpauly",
       "authorAssociation": "OWNER",
       "assignees": [],
@@ -4349,17 +4349,19 @@
       ],
       "body": "Updates based on Matthew Bocci's charter review, for the IAB review",
       "createdAt": "2025-01-21T16:54:53Z",
-      "updatedAt": "2025-01-22T10:25:52Z",
+      "updatedAt": "2025-01-23T01:09:04Z",
       "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
       "baseRefName": "main",
       "baseRefOid": "f8685eac684f5a76fdec41f725061a1785757860",
       "headRepository": "tfpauly/draft-happy-eyeballs-v3",
       "headRefName": "tfpauly-patch-4",
       "headRefOid": "b1e602cfc0d1fd5f03f8099d3362b10c978e8cba",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-01-23T01:09:04Z",
+      "mergedAt": "2025-01-23T01:09:04Z",
+      "mergedBy": "tfpauly",
+      "mergeCommit": {
+        "oid": "7ee6052e18118a85a6382f0ef73a935490a5a42b"
+      },
       "comments": [],
       "reviews": [
         {
@@ -4399,6 +4401,184 @@
           "body": "",
           "createdAt": "2025-01-22T10:25:52Z",
           "updatedAt": "2025-01-22T10:25:52Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 73,
+      "id": "PR_kwDOKH7CuM6ItBri",
+      "title": "Make charter more concise",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/pull/73",
+      "state": "MERGED",
+      "author": "tfpauly",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [
+        "charter"
+      ],
+      "body": "Pass at making the charter more concise, without modifying content.",
+      "createdAt": "2025-01-23T03:17:34Z",
+      "updatedAt": "2025-01-23T22:35:33Z",
+      "baseRepository": "tfpauly/draft-happy-eyeballs-v3",
+      "baseRefName": "main",
+      "baseRefOid": "7ee6052e18118a85a6382f0ef73a935490a5a42b",
+      "headRepository": "tfpauly/draft-happy-eyeballs-v3",
+      "headRefName": "tfpauly-patch-5",
+      "headRefOid": "588437cc1ecdeabe0e876b0c4d35d9f567e3cab1",
+      "closedAt": "2025-01-23T15:26:20Z",
+      "mergedAt": "2025-01-23T15:26:20Z",
+      "mergedBy": "tfpauly",
+      "mergeCommit": {
+        "oid": "12792a8c60fc482501d24da095d83b10a1ae2377"
+      },
+      "comments": [
+        {
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "body": "Yeah, I thought about that, but figured it was okay to drop the line. We mention later that we need to update to not just handle TCP, so it is still in there in another form. ",
+          "createdAt": "2025-01-23T05:46:47Z",
+          "updatedAt": "2025-01-23T05:46:47Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKH7CuM6ZHMlR",
+          "commit": {
+            "abbreviatedOid": "d606771"
+          },
+          "author": "nidhijaju",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Lgtm! Not sure if we want to still mention that v2 focused on TCP, but no strong opinions. I guess people already know that.",
+          "createdAt": "2025-01-23T03:46:18Z",
+          "updatedAt": "2025-01-23T03:46:18Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6ZIyK3",
+          "commit": {
+            "abbreviatedOid": "d606771"
+          },
+          "author": "zaheduzzaman",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-23T08:50:07Z",
+          "updatedAt": "2025-01-23T08:50:08Z",
+          "comments": [
+            {
+              "originalPosition": 69,
+              "body": "If this is not a separate algorithm, then I would suggest to move this paragraph up and combine with the part where we talk about V3 algorithm.",
+              "createdAt": "2025-01-23T08:50:08Z",
+              "updatedAt": "2025-01-23T08:50:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6ZI0-B",
+          "commit": {
+            "abbreviatedOid": "d606771"
+          },
+          "author": "zaheduzzaman",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-23T08:54:50Z",
+          "updatedAt": "2025-01-23T08:54:51Z",
+          "comments": [
+            {
+              "originalPosition": 48,
+              "body": "This I think we can ommit this paragraph from the charter. Review of such algorithms should be a natural process while we are developing new algorithms and may or may not be considered for the new algorihm or can be part of motivations. We don't need this part of the charter as it is natural to do that.",
+              "createdAt": "2025-01-23T08:54:51Z",
+              "updatedAt": "2025-01-23T08:54:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6ZMSjX",
+          "commit": {
+            "abbreviatedOid": "d606771"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-23T15:06:29Z",
+          "updatedAt": "2025-01-23T15:06:30Z",
+          "comments": [
+            {
+              "originalPosition": 48,
+              "body": "Sure, we can remove this",
+              "createdAt": "2025-01-23T15:06:29Z",
+              "updatedAt": "2025-01-23T15:06:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6ZMUuO",
+          "commit": {
+            "abbreviatedOid": "b7e433d"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-23T15:09:34Z",
+          "updatedAt": "2025-01-23T15:09:34Z",
+          "comments": [
+            {
+              "originalPosition": 69,
+              "body": "It is the same algorithm, but the point here is about scoping. I'll rephrase.",
+              "createdAt": "2025-01-23T15:09:34Z",
+              "updatedAt": "2025-01-23T15:09:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6ZMV6n",
+          "commit": {
+            "abbreviatedOid": "d606771"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-23T15:11:03Z",
+          "updatedAt": "2025-01-23T15:11:03Z",
+          "comments": [
+            {
+              "originalPosition": 69,
+              "body": "Done!",
+              "createdAt": "2025-01-23T15:11:03Z",
+              "updatedAt": "2025-01-23T15:11:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6ZMbEO",
+          "commit": {
+            "abbreviatedOid": "588437c"
+          },
+          "author": "zaheduzzaman",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "Looks much better to me.",
+          "createdAt": "2025-01-23T15:17:59Z",
+          "updatedAt": "2025-01-23T15:17:59Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKH7CuM6ZQPnt",
+          "commit": {
+            "abbreviatedOid": "588437c"
+          },
+          "author": "DavidSchinazi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "LGTM",
+          "createdAt": "2025-01-23T22:35:33Z",
+          "updatedAt": "2025-01-23T22:35:33Z",
           "comments": []
         }
       ]
