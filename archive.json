@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-28T00:24:18.660529+00:00",
+  "timestamp": "2025-01-30T00:23:33.724977+00:00",
   "repo": "tfpauly/draft-happy-eyeballs-v3",
   "labels": [
     {
@@ -1181,6 +1181,22 @@
       "body": "The current draft says\n\n> If the client supports TLS Encrypted Client Hello (ECH) discovery through SVCB records {{!SVCB-ECH=I-D.ietf-tls-svcb-ech}}, depending on the client's preference to handle ECH, the client SHOULD sort addresses with ECH keys taking priority to maintain privacy when attempting connection establishment.\n\nECH-SVCB says\n\n> A SVCB RRSet containing some RRs with \"ech\" and some without is vulnerable to a downgrade attack ... This configuration is NOT RECOMMENDED. Zone owners who do use such a mixed configuration SHOULD mark the RRs with \"ech\" as more preferred (i.e. lower SvcPriority value) than those without, in order to maximize the likelihood that ECH will be used in the absence of an active adversary.\n\nIn essence, there is a discrepancy as to whose responsibility it is to prioritize ECH.\n\nI think the ECH-SVCB view should probably prevail.\n\nPhilosophically, the client cannot make the service more secure than the operator intends it to be.\n\nOperationally, it seems valuable to be able to test ECH by placing it on a less-used, lower-priority endpoint, and it would be very surprising to discover that this effectively inverts the stated priority for some (large?) segment of clients.",
       "createdAt": "2025-01-17T16:14:21Z",
       "updatedAt": "2025-01-17T16:14:21Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 74,
+      "id": "I_kwDOKH7CuM6n44zR",
+      "title": "Describe SVCB shuffling between same priority",
+      "url": "https://github.com/tfpauly/draft-happy-eyeballs-v3/issues/74",
+      "state": "OPEN",
+      "author": "tfpauly",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "We should make sure we align with this text from RFC 9460 Section 2.4.1:\n\n> When receiving an RRset containing multiple SVCB records with the same SvcPriority value, clients SHOULD apply a random shuffle within a priority level to the records before using them, to ensure uniform load balancing.\n\n",
+      "createdAt": "2025-01-28T21:00:54Z",
+      "updatedAt": "2025-01-28T21:00:54Z",
       "closedAt": null,
       "comments": []
     }
