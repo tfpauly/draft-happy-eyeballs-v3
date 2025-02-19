@@ -3,7 +3,7 @@ title: "Happy Eyeballs Version 3: Better Connectivity Using Concurrency"
 abbrev: "Happy Eyeballs v3"
 category: info
 
-docname: draft-pauly-v6ops-happy-eyeballs-v3-latest
+docname: draft-pauly-happy-happyeyeballs-v3-latest
 submissiontype: IETF
 number:
 date:

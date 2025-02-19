@@ -2,10 +2,10 @@
 
 This is the working area for the individual Internet-Draft, "Happy Eyeballs Version 3: Better Connectivity Using Concurrency".
 
-* [Editor's Copy](https://tfpauly.github.io/draft-happy-eyeballs-v3/#go.draft-pauly-v6ops-happy-eyeballs-v3.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-pauly-v6ops-happy-eyeballs-v3)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-pauly-v6ops-happy-eyeballs-v3)
-* [Compare Editor's Copy to Individual Draft](https://tfpauly.github.io/draft-happy-eyeballs-v3/#go.draft-pauly-v6ops-happy-eyeballs-v3.diff)
+* [Editor's Copy](https://tfpauly.github.io/draft-happy-eyeballs-v3/#go.draft-pauly-happy-happyeyeballs-v3.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-pauly-happy-happyeyeballs-v3)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-pauly-happy-happyeyeballs-v3)
+* [Compare Editor's Copy to Individual Draft](https://tfpauly.github.io/draft-happy-eyeballs-v3/#go.draft-pauly-happy-happyeyeballs-v3.diff)
 
 
 ## Contributing
